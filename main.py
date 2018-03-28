@@ -12,7 +12,7 @@ from internal import runCommand
 # Command Loop
 
 def cmd_loop():
-    command = raw_input("> ")
+    command = raw_input("> ").lower()
     runCommand.isValid(command)
     cmd_loop()
     
