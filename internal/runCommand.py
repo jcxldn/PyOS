@@ -19,6 +19,7 @@ class commands(object):
     
     @staticmethod
     def help():
+        # Print all functions that do not include an underscore
         print("Commands: " + ', '.join([ x for x in dir(commands) if "_" not in x ]))
 
 # Check if command is valid
