@@ -5,7 +5,7 @@
 # Import Libraries
 
 import os
-# PythonOS Scripts
+# PyOS Scripts
 from internal import extra
 from internal import runCommand
 

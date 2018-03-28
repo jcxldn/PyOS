@@ -3,10 +3,13 @@
 # internal/runCommand.py
 
 # Import Libraries
+
 import sys
-import extra # PyOS Script
+# PyOS Scripts
+import extra
 
 # Commands
+
 class commands(object):
     @staticmethod
     def exit():
