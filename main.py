@@ -7,6 +7,7 @@
 import os
 # PythonOS Scripts
 from internal import extra
+from internal import runCommand
 
 # Define Variables
 
@@ -17,6 +18,8 @@ os_ver = ("DEV")
 
 def cmd_loop():
     command = raw_input("> ")
+    runCommand.isValid(command)
+    cmd_loop()
     
 # Initial Code
 
