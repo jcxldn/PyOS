@@ -6,12 +6,12 @@
 
 import os
 # PythonOS Scripts
-import extra
+from internal import extra
 
 # Define Variables
 
 os_name = ("PyOS")
-os_ver = "DEV"
+os_ver = ("DEV")
 
 # Command Loop
 

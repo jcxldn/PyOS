@@ -1,6 +1,6 @@
 # PyOS
 # Made for Python 2.7.12
-# extra.py
+# internal/extra.py
 
 # Text Color
 
