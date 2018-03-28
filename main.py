@@ -24,4 +24,5 @@ os.system('clear')
 print(extra.os.name + " " + extra.os.ver)
 
 print(extra.colors.WARNING + extra.colors.BOLD + "Note: PyOS was designed for Python v2, not v3." + extra.colors.ENDC)
+print(extra.os.helpmsg)
 cmd_loop()

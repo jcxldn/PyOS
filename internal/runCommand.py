@@ -47,4 +47,4 @@ def isValid(command):
 
     else:
         # Print an error
-        print (extra.colors.FAIL + "Invalid command." + extra.colors.ENDC)
+        print (extra.colors.FAIL + "Invalid command. " + extra.os.helpmsg + extra.colors.ENDC)

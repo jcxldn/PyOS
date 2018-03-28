@@ -8,6 +8,7 @@ class os:
     name = ("PyOS")
     ver = ("DEV")
     author = ("Prouser123")
+    helpmsg = ("Type 'help' for a list of commands.")
 
 # Text Color
 
