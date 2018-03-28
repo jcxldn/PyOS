@@ -16,6 +16,7 @@ class commands(object):
     @staticmethod
     def exit():
         print("Exiting...")
+        commands.clear()
         sys.exit(0)
     
     @staticmethod
@@ -34,7 +35,7 @@ class commands(object):
 # Check if command is valid
 def isValid(command):
     if command in dir(commands):
-        print(extra.colors.OKBLUE + "Command is valid." + extra.colors.ENDC)
+        # print(extra.colors.OKBLUE + "Command is valid." + extra.colors.ENDC)
         
         # Run the command
         getattr(commands, command)()
