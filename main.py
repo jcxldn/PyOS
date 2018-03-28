@@ -21,7 +21,7 @@ def cmd_loop():
 # Clear the screen
 os.system('clear')
 # Print the name and version
-print(extra.os.name + " " + extra.os.ver)
+print(extra.colors.BOLD + extra.os.name + " " + extra.os.ver + extra.colors.ENDC)
 
 print(extra.colors.WARNING + extra.colors.BOLD + "Note: PyOS was designed for Python v2, not v3." + extra.colors.ENDC)
 print(extra.os.helpmsg)
