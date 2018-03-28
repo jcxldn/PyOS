@@ -21,3 +21,11 @@ class colors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+
+# Checks
+
+class checks:
+    # Check if float
+    @staticmethod
+    def isFloat(var):
+        return isinstance(var, float)
