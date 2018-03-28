@@ -9,6 +9,7 @@ import os
 from inspect import getmembers, isfunction
 # PyOS Scripts
 import extra
+import calculator
 
 # Commands
 
@@ -36,6 +37,10 @@ class commands(object):
     def about():
         print(extra.os.name + " " + extra.os.ver)
         print("Author: " + extra.os.author)
+    
+    @staticmethod
+    def calc():
+        calculator.start()
 
 # Check if command is valid
 def isValid(command):
