@@ -39,7 +39,7 @@ class commands(object):
 
 # Check if command is valid
 def isValid(command):
-    if command in dir(commands):
+    if command in [ x for x in dir(commands) if "_" not in x ]:
         # print(extra.colors.OKBLUE + "Command is valid." + extra.colors.ENDC)
         
         # Run the command
