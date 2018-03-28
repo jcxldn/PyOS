@@ -5,6 +5,7 @@
 # Import Libraries
 
 import sys
+import os
 from inspect import getmembers, isfunction
 # PyOS Scripts
 import extra
@@ -21,6 +22,14 @@ class commands(object):
     def help():
         # Print all functions that do not include an underscore
         print("Commands: " + ', '.join([ x for x in dir(commands) if "_" not in x ]))
+    
+    @staticmethod
+    def clear():
+        os.system('clear')
+    
+    @staticmethod
+    def cls():
+        return commands.clear()
 
 # Check if command is valid
 def isValid(command):
