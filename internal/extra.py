@@ -2,6 +2,13 @@
 # Made for Python 2.7.12
 # internal/extra.py
 
+# OS Notes
+
+class os:
+    name = ("PyOS")
+    ver = ("DEV")
+    author = ("Prouser123")
+
 # Text Color
 
 class colors:

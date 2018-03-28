@@ -31,6 +31,11 @@ class commands(object):
     @staticmethod
     def cls():
         return commands.clear()
+    
+    @staticmethod
+    def about():
+        print(extra.os.name + " " + extra.os.ver)
+        print("Author: " + extra.os.author)
 
 # Check if command is valid
 def isValid(command):
