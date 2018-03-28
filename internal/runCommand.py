@@ -5,6 +5,7 @@
 # Import Libraries
 
 import sys
+from inspect import getmembers, isfunction
 # PyOS Scripts
 import extra
 
@@ -18,13 +19,12 @@ class commands(object):
     
     @staticmethod
     def help():
-        print("Commands: " + ', '.join(extra.commands))
+        print("Commands: " + ', '.join([ x for x in dir(commands) if "_" not in x ]))
 
 # Check if command is valid
 def isValid(command):
     if command in dir(commands):
-        id = (extra.commands.index(command))
-        print(extra.colors.OKBLUE + "Command is valid. ID: " + str(id) + extra.colors.ENDC)
+        print(extra.colors.OKBLUE + "Command is valid." + extra.colors.ENDC)
         
         # Run the command
         getattr(commands, command)()
