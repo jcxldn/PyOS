@@ -2,6 +2,8 @@
 # Made for Python 2.7.12
 # internal/extra.py
 
+import platform
+
 # OS Notes
 
 class os:
@@ -9,6 +11,10 @@ class os:
     ver = ("DEV")
     author = ("Prouser123")
     helpmsg = ("Type 'help' for a list of commands.")
+
+# System Info
+class system:
+    pyVer = (platform.python_version())
 
 # Text Color
 

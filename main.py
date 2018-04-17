@@ -22,6 +22,7 @@ def cmd_loop():
 os.system('clear')
 # Print the name and version
 print(extra.colors.BOLD + extra.os.name + " " + extra.os.ver + " - " + extra.colors.WARNING + "Made for Python 2.7" + extra.colors.ENDC)
-
+# Print python version
+print ("Running on Python " + extra.system.pyVer)
 print(extra.os.helpmsg)
 cmd_loop()
