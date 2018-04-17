@@ -10,6 +10,7 @@ from inspect import getmembers, isfunction
 # PyOS Scripts
 import extra
 import calculator
+import sysinfo
 
 # Commands
 
@@ -41,6 +42,10 @@ class commands(object):
     @staticmethod
     def calc():
         calculator.start()
+        
+    @staticmethod
+    def sysinfo():
+        sysinfo.start()
 
 # Check if command is valid
 def isValid(command):
