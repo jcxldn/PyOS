@@ -5,13 +5,26 @@
 # Import Libraries
 
 import os
+import readline
 # PyOS Scripts
 from internal import extra
 from internal import runCommand
 
+# Command Auto Completer
+
+def cmd_complete(text, state):
+    for cmd in [ x for x in dir(runCommand.commands) if "_" not in x ]:
+        if cmd.startswith(text):
+            if not state:
+                return cmd
+            else:
+                state -= 1
+
 # Command Loop
 
 def cmd_loop():
+    readline.parse_and_bind("tab: complete")
+    readline.set_completer(cmd_complete)
     command = raw_input("> ").lower()
     runCommand.isValid(command)
     cmd_loop()
