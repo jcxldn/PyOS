@@ -38,13 +38,15 @@ def start():
 
 def modeSelect():
     print(extra.colors.OKGREEN + "Choose a mode" + extra.colors.ENDC)
-    print(extra.colors.OKBLUE + "(A)dd - (S)ubtract - (M)ultiply - (D)ivide" + extra.colors.ENDC)
+    print(extra.colors.OKBLUE + "(A)dd - (S)ubtract - (M)ultiply - (D)ivide - (E)xit" + extra.colors.ENDC)
     choice = raw_input("Mode > ").lower()
     if choice in validModes:
         number1 = raw_input("First Number > ")
         number2 = raw_input("Second Number > ")
         print(calculate(choice, number1, number2))
     else:
+            if choice == "e":
+                return
             modeSelect()
 
 def calculate(mode, number1, number2):
