@@ -3,7 +3,7 @@
 # internal/sysinfo.py
 
 # Import Libraries
-
+import sys
 # PyOS Scripts
 import extra
 
@@ -13,3 +13,4 @@ def start():
     print(extra.os.name + " " + extra.os.ver  + extra.colors.ENDC)
     # Print System Version
     print("Python " + extra.system.pyVer)
+    print("OS: " + sys.platform)
