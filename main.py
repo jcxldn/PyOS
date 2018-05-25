@@ -1,5 +1,5 @@
 # PyOS
-# Made for Python 2.7.12
+# Made for Python 2.7
 # main.py
 
 # Import Libraries

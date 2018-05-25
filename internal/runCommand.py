@@ -1,5 +1,5 @@
 # PyOS
-# Made for Python 2.7.12
+# Made for Python 2.7
 # internal/runCommand.py
 
 # Import Libraries
