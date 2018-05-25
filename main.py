@@ -13,10 +13,6 @@ except ImportError:
 from internal import extra
 from internal import runCommand
 
-# Clear Screen
-def cls():
-    os.system('cls' if os.name=='nt' else 'clear')
-
 # Command Auto Completer
 
 def cmd_complete(text, state):
@@ -39,7 +35,7 @@ def cmd_loop():
 # Initial Code
 
 # Clear the screen
-cls()
+extra.cls()
 # Print the name and version
 print(extra.colors.BOLD + extra.notes.name + " " + extra.notes.ver + " - " + extra.colors.WARNING + "Made for Python 2.7" + extra.colors.ENDC)
 # Print python version
