@@ -4,10 +4,11 @@
 
 # Import Libraries
 import platform
+import os
 
 # OS Notes
 
-class os:
+class notes:
     name = ("PyOS")
     ver = ("DEV")
     author = ("Prouser123")
@@ -36,3 +37,8 @@ class checks:
     @staticmethod
     def isFloat(var):
         return isinstance(var, float)
+
+# Commands
+
+def cls():
+    os.system('cls' if os.name=='nt' else 'clear')

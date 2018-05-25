@@ -5,10 +5,17 @@
 # Import Libraries
 
 import os
-import readline
+try:
+  import readline
+except ImportError:
+  import pyreadline as readline
 # PyOS Scripts
 from internal import extra
 from internal import runCommand
+
+# Clear Screen
+def cls():
+    os.system('cls' if os.name=='nt' else 'clear')
 
 # Command Auto Completer
 
@@ -32,10 +39,10 @@ def cmd_loop():
 # Initial Code
 
 # Clear the screen
-os.system('clear')
+cls()
 # Print the name and version
-print(extra.colors.BOLD + extra.os.name + " " + extra.os.ver + " - " + extra.colors.WARNING + "Made for Python 2.7" + extra.colors.ENDC)
+print(extra.colors.BOLD + extra.notes.name + " " + extra.notes.ver + " - " + extra.colors.WARNING + "Made for Python 2.7" + extra.colors.ENDC)
 # Print python version
 print ("Running on Python " + extra.system.pyVer)
-print(extra.os.helpmsg)
+print(extra.notes.helpmsg)
 cmd_loop()

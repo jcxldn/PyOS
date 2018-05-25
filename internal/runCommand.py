@@ -28,7 +28,7 @@ class commands(object):
     
     @staticmethod
     def clear():
-        os.system('clear')
+        extra.cls()
     
     @staticmethod
     def cls():
@@ -36,8 +36,8 @@ class commands(object):
     
     @staticmethod
     def about():
-        print(extra.os.name + " " + extra.os.ver)
-        print("Author: " + extra.os.author)
+        print(extra.os.name + " " + extra.notes.ver)
+        print("Author: " + extra.notes.author)
     
     @staticmethod
     def calc():
@@ -57,4 +57,4 @@ def isValid(command):
 
     else:
         # Print an error
-        print (extra.colors.FAIL + "Invalid command. " + extra.os.helpmsg + extra.colors.ENDC)
+        print (extra.colors.FAIL + "Invalid command. " + extra.notes.helpmsg + extra.colors.ENDC)
