@@ -10,7 +10,7 @@ import extra
 def start():
     print(extra.colors.BOLD + "System Infomation" + extra.colors.ENDC)
     # Print PyOS Version
-    print(extra.os.name + " " + extra.notes.ver  + extra.colors.ENDC)
+    print(extra.notes.name + " " + extra.notes.ver  + extra.colors.ENDC)
     # Print System Version
     print("Python " + extra.system.pyVer)
     print("OS: " + sys.platform)

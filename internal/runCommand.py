@@ -36,7 +36,7 @@ class commands(object):
     
     @staticmethod
     def about():
-        print(extra.os.name + " " + extra.notes.ver)
+        print(extra.notes.name + " " + extra.notes.ver)
         print("Author: " + extra.notes.author)
     
     @staticmethod

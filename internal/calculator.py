@@ -33,7 +33,7 @@ class modulo:
 
 def start():
     runCommand.commands.clear()
-    print(extra.colors.BOLD + extra.os.name + " " + appName + extra.colors.ENDC)
+    print(extra.colors.BOLD + extra.notes.name + " " + appName + extra.colors.ENDC)
     modeSelect()
 
 def modeSelect():
