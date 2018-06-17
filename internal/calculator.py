@@ -18,15 +18,15 @@ class modulo:
     @staticmethod
     def add(x, y):
         return (x + y)
-    
+
     @staticmethod
     def subtract(x, y):
         return (x - y)
-    
+
     @staticmethod
     def multiply(x, y):
         return (x * y)
-    
+
     @staticmethod
     def divide(x, y):
         return (x / y)
@@ -52,10 +52,10 @@ def modeSelect():
 def calculate(mode, number1, number2):
     if (mode == "a"):
         return number1 + " + " + number2 + " = " + str(modulo.add(float(number1), float(number2)))
-    
+
     if (mode == "s"):
         return number1 + " - " + number2 + " = " + str(modulo.subtract(float(number1), float(number2)))
-    
+
     if (mode == "m"):
         return number1 + " * " + number2 + " = " + str(modulo.multiply(float(number1), float(number2)))
 
