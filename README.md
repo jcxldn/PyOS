@@ -1,6 +1,6 @@
 # PyOS
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b5a41c81ca6a4a6298b19513e5a98476)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Prouser123/PyOS&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e3808caf3fcd469187062693a68cb95d)](https://www.codacy.com/app/CodeNet/PyOS?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Prouser123/PyOS&amp;utm_campaign=Badge_Grade)
 
 A Python CLI made for Python 2.
 
