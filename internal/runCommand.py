@@ -5,8 +5,7 @@
 # Import Libraries
 
 import sys
-import os
-from inspect import getmembers, isfunction
+from inspect import isfunction
 # PyOS Scripts
 import extra
 import calculator
