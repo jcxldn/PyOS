@@ -5,7 +5,6 @@
 # Import Libraries
 
 import sys
-from inspect import isfunction
 # PyOS Scripts
 import extra
 import calculator
