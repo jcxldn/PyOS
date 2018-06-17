@@ -4,7 +4,6 @@
 
 # Import Libraries
 
-import os
 try:
   import readline
 except ImportError:
@@ -31,7 +30,7 @@ def cmd_loop():
     command = raw_input("> ").lower()
     runCommand.isValid(command)
     cmd_loop()
-    
+
 # Initial Code
 
 # Clear the screen
