@@ -4,6 +4,9 @@
 
 # Import Libraries
 import sys
+import platform
+import getpass
+import socket
 # PyOS Scripts
 import extra
 
@@ -14,3 +17,6 @@ def start():
     # Print System Version
     print("Python " + extra.system.pyVer)
     print("OS: " + sys.platform)
+    print("Architecture: " + platform.machine())
+    print("User: " + getpass.getuser())
+    print("Hostname: " + socket.gethostname())
