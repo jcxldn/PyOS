@@ -44,6 +44,7 @@ def modeSelect():
         number1 = raw_input("First Number > ")
         number2 = raw_input("Second Number > ")
         print(calculate(choice, number1, number2))
+        modeSelect()
     else:
             if choice == "e":
                 return
