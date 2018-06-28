@@ -20,3 +20,6 @@ A Python CLI made for Python 2.
 We handle contributions through pull requests on GitHub. Active development is usually done in branches, which are then merged with master for final release.
 
  For instructions on how to contribute, [please click here.](https://github.com/Prouser123/PyOS/blob/master/CONTRIBUTING.md)
+
+# Notes
+We try to follow the [SemVer Standard.](https://semver.org/)
