@@ -25,4 +25,4 @@ def start():
         # This will fail on Windows, we will just ignore it.
         print("Home Directory: " + os.environ['HOME'])
     except Exception:
-        pass
+        return
