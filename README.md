@@ -21,5 +21,13 @@ We handle contributions through pull requests on GitHub. Active development is u
 
  For instructions on how to contribute, [please click here.](https://github.com/Prouser123/PyOS/blob/master/CONTRIBUTING.md)
 
+# Installing (Windows)
+
+Windows may require you to install pyreadline, you can do this via pip:
+
+```C:/Python27/python.exe -m pip install pyreadline```
+
+(Default installation path)
+
 # Notes
 We try to follow the [SemVer Standard.](https://semver.org/)
