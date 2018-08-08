@@ -21,4 +21,8 @@ def start():
     print("Architecture: " + platform.machine())
     print("User: " + getpass.getuser())
     print("Hostname: " + socket.gethostname())
-    print("Home Directory: " + os.environ['HOME'])
+    try:
+        # This will fail on Windows, we will just ignore it.
+        print("Home Directory: " + os.environ['HOME'])
+    except:
+        pass
