@@ -27,6 +27,8 @@ Windows may require you to install pyreadline, you can do this via pip:
 
 ```C:/Python27/python.exe -m pip install pyreadline```
 
+```python -m pip install pyreadline```
+
 (Default installation path)
 
 # Notes
