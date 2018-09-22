@@ -27,11 +27,11 @@ Windows may require you to install pyreadline, you can do this via pip:
 
 ```C:/Python27/python.exe -m pip install pyreadline```
 
+(Default installation path)
+
 or, if you have added python to your PATH:
 
 ```python -m pip install pyreadline```
-
-(Default installation path)
 
 # Notes
 We try to follow the [SemVer Standard.](https://semver.org/)
