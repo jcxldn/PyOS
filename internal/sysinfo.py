@@ -17,10 +17,13 @@ def start():
     print(extra.notes.name + " " + extra.notes.ver  + extra.colors.ENDC)
     # Print System Version
     print("Python " + extra.system.pyVer)
-    print("OS: " + sys.platform)
+    print("OS: " + platform.system() + ' ' + platform.release())
+    print("OS Build: " + platform.version())
     print("Architecture: " + platform.machine())
     print("User: " + getpass.getuser())
     print("Hostname: " + socket.gethostname())
+    print("Process ID: " + str(os.getpid()))
+    print("Working Directory: " + os.getcwd())
     try:
         # This will fail on Windows, we will just ignore it.
         print("Home Directory: " + os.environ['HOME'])
