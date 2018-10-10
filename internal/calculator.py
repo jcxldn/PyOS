@@ -61,3 +61,4 @@ def calculate(mode, number1, number2):
 
     if (mode == "d"):
         return number1 + " / " + number2 + " = " + str(modulo.divide(float(number1), float(number2)))
+        
