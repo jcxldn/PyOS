@@ -7,6 +7,7 @@
 import sys
 # PyOS Scripts
 import internal.extra
+# External Programs
 import programs.calculator
 import programs.sysinfo
 
