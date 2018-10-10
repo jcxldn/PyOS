@@ -6,9 +6,9 @@
 
 import sys
 # PyOS Scripts
-import extra
-import calculator
-import sysinfo
+import internal.extra
+import internal.calculator
+import internal.sysinfo
 
 # Commands
 

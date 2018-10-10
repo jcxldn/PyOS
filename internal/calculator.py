@@ -3,10 +3,9 @@
 # internal/calculator.py
 
 # Import Libraries
-
-import extra
 # PyOS Scripts
-import runCommand
+import internal.extra
+import internal.runCommand
 
 # Variables
 
