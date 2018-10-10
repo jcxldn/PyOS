@@ -26,7 +26,7 @@ class commands(object):
 
     @staticmethod
     def clear():
-        extra.cls()
+        internal.extra.cls()
 
     @staticmethod
     def cls():
@@ -34,16 +34,16 @@ class commands(object):
 
     @staticmethod
     def about():
-        print(extra.notes.name + " " + extra.notes.ver)
-        print("Author: " + extra.notes.author)
+        print(internal.extra.notes.name + " " + internal.extra.notes.ver)
+        print("Author: " + internal.extra.notes.author)
 
     @staticmethod
     def calc():
-        calculator.start()
+        internal.calculator.start()
 
     @staticmethod
     def sysinfo():
-        sysinfo.start()
+        internal.sysinfo.start()
 
 # Check if command is valid
 def isValid(command):
@@ -55,4 +55,4 @@ def isValid(command):
 
     else:
         # Print an error
-        print (extra.colors.FAIL + "Invalid command. " + extra.notes.helpmsg + extra.colors.ENDC)
+        print (internal.extra.colors.FAIL + "Invalid command. " + internal.extra.notes.helpmsg + internal.extra.colors.ENDC)

@@ -8,7 +8,7 @@ import getpass
 import socket
 import os
 # PyOS Scripts
-import extra
+import internal.extra as extra
 
 def start():
     print(extra.colors.BOLD + "System Infomation" + extra.colors.ENDC)

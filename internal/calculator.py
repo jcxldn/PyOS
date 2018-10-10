@@ -31,13 +31,13 @@ class modulo:
         return (x / y)
 
 def start():
-    runCommand.commands.clear()
-    print(extra.colors.BOLD + extra.notes.name + " " + appName + extra.colors.ENDC)
+    internal.runCommand.commands.clear()
+    print(internal.extra.colors.BOLD + internal.extra.notes.name + " " + appName + internal.extra.colors.ENDC)
     modeSelect()
 
 def modeSelect():
-    print(extra.colors.OKGREEN + "Choose a mode" + extra.colors.ENDC)
-    print(extra.colors.OKBLUE + "(A)dd - (S)ubtract - (M)ultiply - (D)ivide - (E)xit" + extra.colors.ENDC)
+    print(internal.extra.colors.OKGREEN + "Choose a mode" + internal.extra.colors.ENDC)
+    print(internal.extra.colors.OKBLUE + "(A)dd - (S)ubtract - (M)ultiply - (D)ivide - (E)xit" + internal.extra.colors.ENDC)
     choice = raw_input("Mode > ").lower()
     if choice in validModes:
         number1 = raw_input("First Number > ")
