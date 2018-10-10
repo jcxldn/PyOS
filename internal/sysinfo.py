@@ -8,14 +8,14 @@ import getpass
 import socket
 import os
 # PyOS Scripts
-import internal.extra as extra
+import internal.extra
 
 def start():
-    print(extra.colors.BOLD + "System Infomation" + extra.colors.ENDC)
+    print(internal.extra.colors.BOLD + "System Infomation" + internal.extra.colors.ENDC)
     # Print PyOS Version
-    print(extra.notes.name + " " + extra.notes.ver  + extra.colors.ENDC)
+    print(internal.extra.notes.name + " " + internal.extra.notes.ver  + internal.extra.colors.ENDC)
     # Print System Version
-    print("Python " + extra.system.pyVer)
+    print("Python " + internal.extra.system.pyVer)
     print("OS: " + platform.system() + ' ' + platform.release())
     print("OS Build: " + platform.version())
     print("Architecture: " + platform.machine())
