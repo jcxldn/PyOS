@@ -3,7 +3,6 @@
 # internal/sysinfo.py
 
 # Import Libraries
-import sys
 import platform
 import getpass
 import socket
