@@ -1,6 +1,9 @@
 # Compiled Python
 *.pyc
 
+# Version Checker Text File
+latest.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
