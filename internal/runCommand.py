@@ -7,6 +7,7 @@
 import sys
 # PyOS Scripts
 import internal.extra
+import internal.update.runscript
 # External Programs
 import programs.calculator
 import programs.sysinfo
@@ -50,6 +51,11 @@ class commands(object):
     def sysinfo():
         # Run external file
         programs.sysinfo.app()
+        
+    @staticmethod
+    def updater():
+        # Run updater file
+        internal.update.runscript.app()
 
 # Check if command is valid
 def isValid(command):
