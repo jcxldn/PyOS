@@ -14,22 +14,21 @@ def getfile():
 
 # print("Getting version from text file")
 
-def readfile():
-	with open("latest.txt") as f:
-		latest_version = f.read().split("\n")#[line_number]
-		print(latest_version[1])
-		ver = latest_version[1]
-		ver = ver[1:]
-		print("ver:: " + ver)
-
 def app():
-	print(internal.extra.colors.BOLD + "PyOS Update Checker" + internal.extra.colors.ENDC)
+	print(internal.extra.colors.BOLD + "PyOS Update Checker" + internal.extra.colors.OKBLUE)
 	print("Checking for updates...")
 	getfile()
 	with open("latest.txt") as f:
+		print(internal.extra.colors.ENDC)
 		latest_version = f.read().split("\n")#[line_number]
-		print(latest_version[1])
+		#print(latest_version[1])
 		ver = latest_version[1]
 		ver = ver[1:]
-	print("The installed version is " + internal.extra.notes.ver + ". The most recent public release is " + ver + ". To update please visit: https://github.com/Prouser123/PyOS/releases/latest")
+	print("Installed Version: " + internal.extra.colors.WARNING + internal.extra.notes.ver + internal.extra.colors.ENDC)
+	print("Newest Version: " + internal.extra.colors.WARNING + ver + internal.extra.colors.ENDC)
+	if (float(internal.extra.notes.ver) >= float(ver)):
+		print("You are up-to-date!")
+	else:
+		print("There is a new version available.")
+		print("To update please visit: https://github.com/Prouser123/PyOS/releases/latest")
 

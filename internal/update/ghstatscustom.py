@@ -191,7 +191,8 @@ def download_stats(user=None, repo=None, tag=None, latest=False, token=None, qui
     if not repo:
         repo = input("GitHub Repository: ")
     if not quiet:
-        print("Downloading {0}/{1} stats...".format(user, repo))
+        #print("Downloading {0}/{1} stats...".format(user, repo))
+        print("Downloading PyOS info...")
     url = "https://api.github.com/repos/{0}/{1}/releases".format(user, repo)
     url += ("" if not tag else "/tags/" + tag) if not latest else "/latest"
     headers = {} if not token else {"Authorization": "token " + token}
