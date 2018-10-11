@@ -51,7 +51,7 @@ class commands(object):
     def sysinfo():
         # Run external file
         programs.sysinfo.app()
-        
+
     @staticmethod
     def updater():
         # Run updater file
