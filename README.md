@@ -22,7 +22,7 @@ We handle contributions through pull requests on GitHub. Active development is u
 
  For instructions on how to contribute, [please click here.](https://github.com/Prouser123/PyOS/blob/master/CONTRIBUTING.md)
 
-# Examples
+## Examples
 
 There is an example program in the ```programs``` directory.
 
@@ -34,7 +34,7 @@ Example: ```import internal.extra```
 
 There is a color class in ```internal.extra.colors``` which can be used to display various styles in the command-line.
 
-# Dependencies
+## Dependencies
 
 Windows only. Not required on other platforms.
 
@@ -48,5 +48,5 @@ or, if you have added python to your PATH:
 
 ```pip install pyreadline```
 
-# Notes
+## Notes
 We try to follow the [SemVer Standard.](https://semver.org/)
