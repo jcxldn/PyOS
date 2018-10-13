@@ -18,11 +18,6 @@ try:
 except ImportError:
     import urllib.request as urllib2
 
-try:
-    input = raw_input
-except NameError:
-    pass
-
 __version__ = "1.2.0"
 __author__ = "Alexander Gorishnyak"
 __email__ = "kefir500@gmail.com"
@@ -187,9 +182,9 @@ def download_stats(user=None, repo=None, tag=None, latest=False, token=None, qui
     :raises ConnectionError: On connection error.
     """
     if not user:
-        user = input("GitHub Username: ")
+        user = raw_input("GitHub Username: ")
     if not repo:
-        repo = input("GitHub Repository: ")
+        repo = raw_input("GitHub Repository: ")
     if not quiet:
         #print("Downloading {0}/{1} stats...".format(user, repo))
         print("Downloading PyOS info...")
