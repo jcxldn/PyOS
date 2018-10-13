@@ -28,7 +28,7 @@ There is an example program in the ```programs``` directory.
 
 You can import any script in the internal folder with:
 
-```import folder.script```
+```import internal.scriptname```
 
 Example: ```import internal.extra```
 
