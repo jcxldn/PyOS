@@ -10,7 +10,7 @@ import os
 
 class notes:
     name = ("PyOS")
-    ver = ("1.2.1")
+    ver = ("2.0")
     author = ("Prouser123")
     helpmsg = ("Type 'help' for a list of commands.")
 
@@ -42,4 +42,3 @@ class checks:
 
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
-    

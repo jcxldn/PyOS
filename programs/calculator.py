@@ -30,7 +30,7 @@ class modulo:
     def divide(x, y):
         return (x / y)
 
-def start():
+def app():
     internal.runCommand.commands.clear()
     print(internal.extra.colors.BOLD + internal.extra.notes.name + " " + appName + internal.extra.colors.ENDC)
     modeSelect()
@@ -61,4 +61,3 @@ def calculate(mode, number1, number2):
 
     if (mode == "d"):
         return number1 + " / " + number2 + " = " + str(modulo.divide(float(number1), float(number2)))
-        

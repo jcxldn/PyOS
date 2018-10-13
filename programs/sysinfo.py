@@ -10,7 +10,7 @@ import os
 # PyOS Scripts
 import internal.extra
 
-def start():
+def app():
     print(internal.extra.colors.BOLD + "System Infomation" + internal.extra.colors.ENDC)
     # Print PyOS Version
     print(internal.extra.notes.name + " " + internal.extra.notes.ver  + internal.extra.colors.ENDC)

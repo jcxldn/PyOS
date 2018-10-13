@@ -7,8 +7,10 @@
 import sys
 # PyOS Scripts
 import internal.extra
-import internal.calculator
-import internal.sysinfo
+import internal.update.runscript
+# External Programs
+import programs.calculator
+import programs.sysinfo
 
 # Commands
 
@@ -26,24 +28,34 @@ class commands(object):
 
     @staticmethod
     def clear():
+        # Run built-in function
         internal.extra.cls()
 
     @staticmethod
     def cls():
+        # Run built-in function
         return commands.clear()
 
     @staticmethod
     def about():
+        # Run code below (no function necessary)
         print(internal.extra.notes.name + " " + internal.extra.notes.ver)
         print("Author: " + internal.extra.notes.author)
 
     @staticmethod
     def calc():
-        internal.calculator.start()
+        # Run external file
+        programs.calculator.app()
 
     @staticmethod
     def sysinfo():
-        internal.sysinfo.start()
+        # Run external file
+        programs.sysinfo.app()
+
+    @staticmethod
+    def updater():
+        # Run updater file
+        internal.update.runscript.app()
 
 # Check if command is valid
 def isValid(command):
@@ -56,4 +68,3 @@ def isValid(command):
     else:
         # Print an error
         print (internal.extra.colors.FAIL + "Invalid command. " + internal.extra.notes.helpmsg + internal.extra.colors.ENDC)
-        
