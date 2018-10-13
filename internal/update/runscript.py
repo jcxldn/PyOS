@@ -5,7 +5,7 @@
 # See ghstatscustom.py for more infomation.
 
 # Import custom file
-import ghstatscustom
+import internal.update.ghstatscustom as ghstatscustom
 # PyOS Scripts
 import internal.extra
 
