@@ -31,4 +31,3 @@ def app():
 	else:
 		print("There is a new version available.")
 		print("To update please visit: https://github.com/Prouser123/PyOS/releases/latest")
-
