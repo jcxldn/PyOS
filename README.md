@@ -34,7 +34,9 @@ Example: ```import internal.extra```
 
 There is a color class in ```internal.extra.colors``` which can be used to display various styles in the command-line.
 
-# Installing (Windows)
+# Dependencies
+
+Windows only. Not required on other platforms.
 
 Windows may require you to install pyreadline, you can do this via pip:
 
@@ -44,7 +46,7 @@ Windows may require you to install pyreadline, you can do this via pip:
 
 or, if you have added python to your PATH:
 
-```python -m pip install pyreadline```
+```pip install pyreadline```
 
 # Notes
 We try to follow the [SemVer Standard.](https://semver.org/)

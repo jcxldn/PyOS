@@ -5,8 +5,10 @@
 # Import Libraries
 
 try:
+  # readline for Linux / Darwin
   import readline
 except ImportError:
+  # pyreadline for Windows
   import pyreadline as readline
 # PyOS Scripts
 import internal.extra
