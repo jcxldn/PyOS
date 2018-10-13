@@ -11,6 +11,7 @@ import internal.update.runscript
 # External Programs
 import programs.calculator
 import programs.sysinfo
+import programs.example
 
 # Commands
 
@@ -56,6 +57,11 @@ class commands(object):
     def updater():
         # Run updater file
         internal.update.runscript.app()
+
+    @staticmethod
+    def example():
+        # Run external file
+        programs.example.app()
 
 # Check if command is valid
 def isValid(command):

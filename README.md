@@ -22,6 +22,18 @@ We handle contributions through pull requests on GitHub. Active development is u
 
  For instructions on how to contribute, [please click here.](https://github.com/Prouser123/PyOS/blob/master/CONTRIBUTING.md)
 
+# Examples
+
+There is an example program in the ```programs``` directory.
+
+You can import any script in the internal folder with:
+
+```import internal.scriptname```
+
+Example: ```import internal.extra```
+
+There is a color class in ```internal.extra.colors``` which can be used to display various styles in the command-line.
+
 # Installing (Windows)
 
 Windows may require you to install pyreadline, you can do this via pip:
