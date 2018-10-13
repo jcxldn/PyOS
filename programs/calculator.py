@@ -1,6 +1,6 @@
 # PyOS
 # Made for Python 2.7
-# internal/calculator.py
+# programs/calculator.py
 
 # Import Libraries
 # PyOS Scripts

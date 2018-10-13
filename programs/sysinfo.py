@@ -1,6 +1,6 @@
 # PyOS
 # Made for Python 2.7
-# internal/sysinfo.py
+# programs/sysinfo.py
 
 # Import Libraries
 import platform
