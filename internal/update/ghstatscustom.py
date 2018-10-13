@@ -127,45 +127,6 @@ def get_env_token():
     token = None if "GITHUB_TOKEN" not in os.environ else os.environ["GITHUB_TOKEN"]
     return token
 
-
-def print_help():
-    """
-    Display command line help.
-    """
-    print("GitHub Download Stats")
-    print("Python script to obtain GitHub Release download count and other statistics.\n")
-    print("Usage:\n"
-          "  python ghstats.py [{0}user{1}] [{0}repo{1}] [{0}tag{1}] [{0}options{1}]\n"
-          "  python ghstats.py [{0}user{1}/{0}repo{1}] [{0}tag{1}] [{0}options{1}]\n"
-          .format(_Text.ITALIC, _Text.END))
-    print("Arguments:\n"
-          "  {0}user{1}  Repository owner. If not present, user will be prompted for input.\n"
-          "  {0}repo{1}  Repository title. If not present, user will be prompted for input.\n"
-          "  {0}tag{1}   Release tag name. If not present, prints the total number of downloads.\n"
-          .format(_Text.BOLD, _Text.END))
-    print("Options:\n"
-          "  {0}-d{1}, {0}--detail{1}  Print detailed statistics for release(s).\n"
-          "  {0}-q{1}, {0}--quiet{1}   Print only resulting numbers and errors.\n"
-          "                Overrides -d option.\n"
-          "  {0}-l{1}, {0}--latest{1}  Get stats for the latest release.\n"
-          "                Tag argument will be ignored.\n"
-          "  {0}-h{1}, {0}--help{1}    Show this help.\n"
-          .format(_Text.BOLD, _Text.END))
-    print("Environment Variables:\n"
-          "  {0}GITHUB_TOKEN{2}   GitHub OAuth token.\n"
-          "                 Use to increase API request limit.\n"
-          "                 {1}https://github.com/settings/tokens{2}"
-          .format(_Text.BOLD, _Text.UNDERLINE, _Text.END))
-    sys.exit(0)
-
-
-def print_greeting():
-    """
-    Display greeting message.
-    """
-    return
-
-
 def download_stats(user=None, repo=None, tag=None, latest=False, token=None, quiet=False):
     """
     Get download statistics from GitHub API.
@@ -244,25 +205,6 @@ def get_stats_downloads(stats, quiet=False):
             total += get_release_downloads(release, quiet)
     return total
 
-
-def print_total(total, quiet=False, tag=None):
-    """
-    Print total number of downloads.
-    :param total: Total number of downloads.
-    :param quiet: If True, print only number of downloads without an additional text.
-    :param tag: Release tag name (optional).
-    :return: Total number of downloads passed via "total" parameter.
-    """
-    if not quiet:
-        print("\n{0}Total Downloads{1}: {2}"
-              .format(_Text.BOLD,
-                      "" if not tag else " (" + tag + ")",
-                      _Text.SUCCESS + str(total) + _Text.END))
-    elif __name__ == "__main__" or __name__ == "ghstats.ghstats":  # pragma: no cover
-        print(str(total))
-    return total
-
-
 def main(user=None, repo=None, tag=None, latest=False, detail=False, token=None, quiet=False):
     """
     Get number of downloads for GitHub release(s).
@@ -275,8 +217,6 @@ def main(user=None, repo=None, tag=None, latest=False, detail=False, token=None,
     :param quiet: If True, print nothing.
     :return: Number of downloads.
     """
-    if not quiet:
-        print_greeting()
     try:
         stats = download_stats(user, repo, tag, latest, token, quiet)
     except GithubError as e:
@@ -287,51 +227,3 @@ def main(user=None, repo=None, tag=None, latest=False, detail=False, token=None,
         total = get_stats_downloads(stats, quiet or not detail)
         # print_total(total, quiet, tag or (stats["tag_name"] if latest else None))
         return total
-
-
-def main_cli(args=None):
-    """
-    Parse command line arguments and pass to the main function.
-    :param args: Command line arguments (without script name).
-    :return: Number of downloads.
-    """
-    user = None              # GitHub username
-    repo = None              # GitHub repository
-    tag = None               # GitHub release tag
-    latest = False           # Latest release
-    detail = False           # Detailed output
-    quiet = False            # Quiet output
-    token = get_env_token()  # GitHub token
-    if args is None:
-        args = sys.argv[1:]
-    for arg in args:
-        if arg == "-q" or arg == "--quiet":
-            quiet = True
-        elif arg == "-d" or arg == "--detail":
-            detail = True
-        elif arg == "-l" or arg == "--latest":
-            latest = True
-        elif arg == "-h" or arg == "--help" or arg == "-?":
-            print_help()
-        else:
-            if not user:
-                if "/" not in arg:
-                    user = arg
-                else:
-                    userrepo = arg.split("/")
-                    user = userrepo[0]
-                    repo = userrepo[1]
-            elif not repo:
-                repo = arg
-            elif quiet and detail and latest:
-                break
-            elif not tag:
-                tag = arg
-    return main(user, repo, tag, latest, detail, token, quiet)
-
-
-if __name__ == "__main__":  # pragma: no cover
-    try:
-        main_cli(sys.argv[1:])
-    except KeyboardInterrupt:
-        pass
