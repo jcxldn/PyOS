@@ -36,17 +36,13 @@ There is a color class in ```internal.extra.colors``` which can be used to displ
 
 ## Dependencies
 
-Windows only. Not required on other platforms.
+This is only usually required on Windows systems.
 
-Windows may require you to install pyreadline, you can do this via pip:
+You can install the requirements with this command:
 
-```C:/Python27/python.exe -m pip install pyreadline```
+```pip install -r requirements.txt```
 
-(Default installation path)
-
-or, if you have added python to your PATH:
-
-```pip install pyreadline```
+You only need to install these requirements if the program fails to launch.
 
 ## Notes
 We try to follow the [SemVer Standard.](https://semver.org/)
