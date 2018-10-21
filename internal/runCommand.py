@@ -12,6 +12,7 @@ import internal.update.runscript
 import programs.calculator
 import programs.sysinfo
 import programs.example
+import programs.fizzbuzz
 
 # Commands
 
@@ -40,7 +41,7 @@ class commands(object):
     @staticmethod
     def about():
         # Run code below (no function necessary)
-        print(internal.extra.notes.name + " " + internal.extra.notes.ver)
+        print(internal.extra.colors.BOLD + internal.extra.notes.name + " " + internal.extra.notes.ver + internal.extra.colors.ENDC)
         print("Author: " + internal.extra.notes.author)
 
     @staticmethod
@@ -62,6 +63,11 @@ class commands(object):
     def example():
         # Run external file
         programs.example.app()
+        
+    @staticmethod
+    def fizzbuzz():
+        # Run external file
+        programs.fizzbuzz.app()
 
 # Check if command is valid
 def isValid(command):
