@@ -4,6 +4,7 @@
 
 # See ghstatscustom.py for more infomation.
 
+from distutils.version import LooseVersion
 # Import custom file
 import internal.update.ghstatscustom as ghstatscustom
 # PyOS Scripts
@@ -27,7 +28,7 @@ def app():
 	print("Installed Version: " + internal.extra.colors.WARNING + internal.extra.notes.ver + internal.extra.colors.ENDC)
 	print("Newest Version: " + internal.extra.colors.WARNING + ver + internal.extra.colors.ENDC)
 	try:
-		if (float(internal.extra.notes.ver) >= float(ver)):
+		if LooseVersion(internal.extra.notes.ver) >= LooseVersion(ver):
 			print("You are up-to-date!")
 		else:
 			print("There is a new version available.")
