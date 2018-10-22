@@ -63,7 +63,7 @@ class commands(object):
     def example():
         # Run external file
         programs.example.app()
-        
+
     @staticmethod
     def fizzbuzz():
         # Run external file
