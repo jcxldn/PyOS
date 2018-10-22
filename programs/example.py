@@ -14,7 +14,7 @@ def app():
     """
     This line of code below the BOLD text style, prints some text and resets the text style.
     You can use the internal.extra.colors class to use text styles.
-    
+
     In this script internal.extra has been set to 'e',
     so e.colors will work to access color styles.
     """

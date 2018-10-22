@@ -182,7 +182,6 @@ def get_release_downloads(release, quiet=False):
     :return: Number of downloads for a release.
     """
     if not quiet:
-        encoding = sys.stdout.encoding or "ascii"
         print("Latest Tag: " + release["tag_name"])
         with open("latest.txt", "w") as text_file:
             text_file.write("Latest Tag\n" + release["tag_name"])
