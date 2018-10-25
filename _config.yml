@@ -1,0 +1,5 @@
+# Using the Leap Day Theme
+theme: jekyll-theme-leap-day
+
+# Custom
+custom_documentation_url: ./DOCUMENTATION
