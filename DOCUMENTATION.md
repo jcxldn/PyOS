@@ -8,7 +8,7 @@ All current commands listed in alphabetical order.
 
 `calc` - A calculator.
 
-`clear` | `cls` - Clears the screen.
+`clear` + `cls` - Clears the screen.
 
 `example` - An example program.
 
