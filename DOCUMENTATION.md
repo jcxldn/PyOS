@@ -38,3 +38,9 @@ PATCH version when you make backwards-compatible bug fixes.
 
 Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 ```
+
+In some cases, the version in the PyOS program may read as `X.Y.Z-base-BRANCH`, and is because changes have been made in the branch for the upcoming  `X.Y.Z` release, but have not yet been tagged on GitHub.
+
+An example of this would be a change in the `master` branch that has not yet been tagged, or formally released, on GitHub. Treat these releases as a pre-release. These are besed of their respective branches and may be unstable, or have broken and/or missing features.
+
+For a stable release, please use a release that is [tagged on GitHub](https://github.com/Prouser123/PyOS/releases/latest).
