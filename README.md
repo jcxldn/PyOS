@@ -45,4 +45,4 @@ You can install the requirements with this command:
 You only need to install these requirements if the program fails to launch.
 
 ## Notes
-We try to follow the [SemVer Standard.](https://semver.org/)
+[Documentation](DOCUMENTATION.md)
