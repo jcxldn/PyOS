@@ -43,6 +43,7 @@ class commands(object):
         # Run code below (no function necessary)
         print(internal.extra.colors.BOLD + internal.extra.notes.name + " " + internal.extra.notes.ver + internal.extra.colors.ENDC)
         print("Author: " + internal.extra.notes.author)
+        print("For more infomation please read the README.md and DOCUMENTATION.md files in the project folder.")
 
     @staticmethod
     def calc():
