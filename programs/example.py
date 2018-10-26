@@ -19,6 +19,6 @@ def app():
     so e.colors will work to access color styles.
     """
     print(e.colors.BOLD + "PyOS Example Program" + e.colors.ENDC)
-    
+
     # Print sample text
     print("Hello, World!")
