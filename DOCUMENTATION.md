@@ -18,6 +18,10 @@ All current commands listed in alphabetical order.
 
 `help` - View a list of commands.
 
+`ls` - List the contents of your current directory.
+
+`pwd` - List the current working directory.
+
 `sysinfo` - View system information.
 
 `updater` - Check for updates on GitHub (requires internet access)
