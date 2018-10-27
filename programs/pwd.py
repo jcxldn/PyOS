@@ -1,6 +1,6 @@
 # PyOS
 # Made for Python 2.7
-# programs/ls.py
+# programs/pwd.py
 
 # Import Libraries
 # PyOS Scripts
