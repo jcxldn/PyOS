@@ -13,6 +13,8 @@ import programs.calculator
 import programs.sysinfo
 import programs.example
 import programs.fizzbuzz
+import programs.ls
+import programs.pwd
 
 # Commands
 
@@ -69,6 +71,16 @@ class commands(object):
     def fizzbuzz():
         # Run external file
         programs.fizzbuzz.app()
+
+    @staticmethod
+    def ls():
+        # Run external file
+        programs.ls.app()
+
+    @staticmethod
+    def pwd():
+        # Run external file
+        programs.pwd.app()
 
 # Check if command is valid
 def isValid(command):
