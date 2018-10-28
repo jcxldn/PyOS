@@ -15,6 +15,7 @@ import programs.example
 import programs.fizzbuzz
 import programs.ls
 import programs.pwd
+import programs.downloader
 
 # Commands
 
@@ -81,6 +82,11 @@ class commands(object):
     def pwd():
         # Run external file
         programs.pwd.app()
+
+    @staticmethod
+    def downloader():
+        # Run external file
+        programs.downloader.app()
 
 # Check if command is valid
 def isValid(command):
