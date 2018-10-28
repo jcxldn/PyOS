@@ -4,7 +4,7 @@
 
 All current commands listed in alphabetical order.
 
-`about` - Basic infomation about PyOS.
+`about` - Basic information about PyOS.
 
 `calc` - A calculator.
 
