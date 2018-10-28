@@ -50,7 +50,7 @@ class Snake():
 
     def getHeadPos(self):
         return self.position
-    
+
     def getBody(self):
         return self.body
 
@@ -58,7 +58,7 @@ class Snake():
 class Food():
 
     cryptogen = SystemRandom()
-    
+
     def __init__(self):
         self.position = [self.cryptogen.randrange(1, 50)*10, self.cryptogen.randrange(1, 50)*10]
         self.isFoodOnScreen = True
@@ -74,7 +74,7 @@ class Food():
 
 # Launcher Class
 class Launcher:
-    
+
     # Initialise global variables for display properties
     def __init__(self):
         self.window = pygame.display.set_mode((500, 500))
@@ -86,7 +86,6 @@ class Launcher:
         self.food = Food()
 
     def start(self):
-
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -118,11 +117,12 @@ class Launcher:
             pygame.display.flip()
             self.fps.tick(24)
 
-
+# Main Function, where we call initialise the game.
 def main():
     launcher = Launcher()
     launcher.start()
-    
+
+# Gameover function, outside any class structure.
 def gameOver():
     print("Ouch!, Game Over!")
     pygame.quit()
