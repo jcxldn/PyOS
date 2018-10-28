@@ -1,6 +1,6 @@
 import pygame
 import sys
-import random
+from random import SystemRandom
 
 # Snake Class
 class Snake():
@@ -47,7 +47,7 @@ class Snake():
             if self.position == bodyPart:
                 return True
         return False
-    
+
     def getHeadPos(self):
         return self.position
     
@@ -56,15 +56,16 @@ class Snake():
 
 # Food class
 class Food():
+
+    cryptogen = SystemRandom()
+    
     def __init__(self):
-        self.position = [random.randrange(1, 50)*10,
-             random.randrange(1, 50)*10]
+        self.position = [self.cryptogen.randrange(1, 50)*10, self.cryptogen.randrange(1, 50)*10]
         self.isFoodOnScreen = True
 
     def spawnFood(self):
         if (not self.isFoodOnScreen):
-            self.position = [random.randrange(1, 50)*10,
-             random.randrange(1, 50)*10]
+            self.position = [self.cryptogen.randrange(1, 50)*10, self.cryptogen.randrange(1, 50)*10]
             self.isFoodOnScreen = True
         return self.position
 
