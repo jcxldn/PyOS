@@ -14,7 +14,8 @@ def app():
     print internal.extra.colors.BOLD + "Downloader" + internal.extra.colors.ENDC
 
     url = raw_input("Enter file url: ")
-    file_name = url.split("/")[len(url.split("/")) - 1]
+    file_name = url.split("/")
+    file_name = file_name[len(file_name) - 1]
     print "Downloading..."
     try:
         r = requests.get(url)
@@ -23,5 +24,5 @@ def app():
         print "File saved as %s" % file_name
     except Exception as e:
         print "An error occured"
-        if input("Show error message (y/n): ") in ["y", "Y"]:
+        if raw_input("Show error message (y/n): ") in ["y", "Y"]:
             print e
