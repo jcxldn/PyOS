@@ -1,6 +1,5 @@
 import pygame
 import sys
-import time
 import random
 
 # Snake Class
@@ -47,18 +46,13 @@ class Snake():
         for bodyPart in self.body[1:]:
             if self.position == bodyPart:
                 return True
-        return False    
+        return False
     
     def getHeadPos(self):
         return self.position
     
     def getBody(self):
         return self.body
-
-    def gameOver(self):
-        print("Ouch!, Game Over!")
-        pygame.quit()
-        sys.exit()
 
 # Food class
 class Food():
@@ -98,13 +92,13 @@ class Launcher:
                     gameOver()
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RIGHT:
-                        self.snake.changeDirectionOfSnake('RIGHT') 
+                        self.snake.changeDirectionOfSnake('RIGHT')
                     if event.key == pygame.K_UP:
-                        self.snake.changeDirectionOfSnake('UP') 
+                        self.snake.changeDirectionOfSnake('UP')
                     if event.key == pygame.K_DOWN:
-                        self.snake.changeDirectionOfSnake('DOWN') 
+                        self.snake.changeDirectionOfSnake('DOWN')
                     if event.key == pygame.K_LEFT:
-                        self.snake.changeDirectionOfSnake('LEFT') 
+                        self.snake.changeDirectionOfSnake('LEFT')
 
             foodPos = self.food.spawnFood()
             if (self.snake.move(foodPos)):
@@ -117,7 +111,7 @@ class Launcher:
                 pygame.draw.rect(self.window, pygame.Color(100, 100, 100), pygame.Rect(foodPos[0], foodPos[1], 10, 10))
 
             if (self.snake.checkCollision()):
-                self.snake.gameOver()
+                gameOver()
 
             pygame.display.set_caption("HacktoberFest Snake Game | Score: " + str(self.score))
             pygame.display.flip()
@@ -128,5 +122,10 @@ def main():
     launcher = Launcher()
     launcher.start()
     
+def gameOver():
+    print("Ouch!, Game Over!")
+    pygame.quit()
+    sys.exit()
+
 if __name__ == "__main__":
     main()
