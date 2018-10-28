@@ -11,14 +11,14 @@ class Snake():
         self.direction = "RIGHT"
         self.changeDirectionTo = self.direction
 
-    def changeDirectionOfSnake(self, dir):
-        if dir == "RIGHT" and not self.direction == "LEFT":
+    def changeDirectionOfSnake(self, direction):
+        if direction == "RIGHT" and not self.direction == "LEFT":
             self.direction = "RIGHT"
-        if dir == "LEFT" and not self.direction == "RIGHT":
+        if direction == "LEFT" and not self.direction == "RIGHT":
             self.direction = "LEFT"
-        if dir == "UP" and not self.direction == "DOWN":
+        if direction == "UP" and not self.direction == "DOWN":
             self.direction = "UP"
-        if dir == "DOWN" and not self.direction == "UP":
+        if direction == "DOWN" and not self.direction == "UP":
             self.direction = "DOWN"
 
     def move(self, foodPos):
@@ -36,7 +36,6 @@ class Snake():
             return True
         else:
             self.body.pop()
-            return False
 
     def checkCollision(self):
         if self.position[0] > 490 or self.position[0] < 0:
@@ -69,14 +68,14 @@ class Food():
         self.isFoodOnScreen = True
 
     def spawnFood(self):
-        if (self.isFoodOnScreen == False):
+        if (not self.isFoodOnScreen):
             self.position = [random.randrange(1, 50)*10,
              random.randrange(1, 50)*10]
             self.isFoodOnScreen = True
         return self.position
 
-    def setFoodOnScreen(self, boolean):
-        self.isFoodOnScreen = boolean;
+    def setFoodOnScreen(self, result):
+        self.isFoodOnScreen = result
 
 # Launcher Class
 class Launcher:
@@ -89,7 +88,7 @@ class Launcher:
 
         self.score = 0
         self.snake = Snake()
-        self.food = Food();
+        self.food = Food()
 
     def start(self):
 
@@ -117,7 +116,7 @@ class Launcher:
                 pygame.draw.rect(self.window, pygame.Color(255, 0, 0), pygame.Rect(pos[0], pos[1], 10, 10))
                 pygame.draw.rect(self.window, pygame.Color(100, 100, 100), pygame.Rect(foodPos[0], foodPos[1], 10, 10))
 
-            if (self.snake.checkCollision() == True):
+            if (self.snake.checkCollision()):
                 self.snake.gameOver()
 
             pygame.display.set_caption("HacktoberFest Snake Game | Score: " + str(self.score))
