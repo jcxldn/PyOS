@@ -1,5 +1,7 @@
 import pygame
 import sys
+import time
+import random
 
 # Snake Class
 class Snake():
@@ -60,8 +62,6 @@ class Snake():
         sys.exit()
 
 # Food class
-import random
-
 class Food():
     def __init__(self):
         self.position = [random.randrange(1, 50)*10,
