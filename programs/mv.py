@@ -45,4 +45,3 @@ def app():
             target_file = origin_file
     print("Target file: " + target_file + " selected.")
     os.rename(origin_file, target_file)
-
