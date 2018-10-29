@@ -88,17 +88,7 @@ class Launcher:
     def start(self):
         while True:
             for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    gameOver()
-                elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_RIGHT:
-                        self.snake.changeDirectionOfSnake('RIGHT')
-                    if event.key == pygame.K_UP:
-                        self.snake.changeDirectionOfSnake('UP')
-                    if event.key == pygame.K_DOWN:
-                        self.snake.changeDirectionOfSnake('DOWN')
-                    if event.key == pygame.K_LEFT:
-                        self.snake.changeDirectionOfSnake('LEFT')
+                self.check_events(event)
 
             foodPos = self.food.spawnFood()
             if (self.snake.move(foodPos)):
@@ -116,6 +106,20 @@ class Launcher:
             pygame.display.set_caption("HacktoberFest Snake Game | Score: " + str(self.score))
             pygame.display.flip()
             self.fps.tick(24)
+
+    def check_events(self, event):
+        if event.type == pygame.QUIT:
+            gameOver()
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT:
+                self.snake.changeDirectionOfSnake('RIGHT')
+            if event.key == pygame.K_UP:
+                self.snake.changeDirectionOfSnake('UP')
+            if event.key == pygame.K_DOWN:
+                self.snake.changeDirectionOfSnake('DOWN')
+            if event.key == pygame.K_LEFT:
+                self.snake.changeDirectionOfSnake('LEFT')
+
 
 # Main Function, where we call initialise the game.
 def app():
