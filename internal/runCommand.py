@@ -16,6 +16,7 @@ import programs.fizzbuzz
 import programs.ls
 import programs.pwd
 import programs.downloader
+import programs.cd
 
 # Commands
 
@@ -87,6 +88,12 @@ class commands(object):
     def downloader():
         # Run external file
         programs.downloader.app()
+
+    @staticmethod
+    def cd():
+        dir = raw_input("Enter dir: ")
+        # Run external file
+        programs.cd.app(dir)
 
 # Check if command is valid
 def isValid(command):
