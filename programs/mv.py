@@ -34,14 +34,15 @@ def app():
     if target_file == "":
         target_file = origin_file + ".bak"
     if os.path.isfile(target_file):
-        target_file = raw_input(internal.extra.colors.BOLD + "Warning! File " + target_file + "exists.\n\
-                                Overwrite [y/0/Enter] or back-up [b/1]?"  + internal.extra.colors.ENDC)
-        if target_file.lower() == '' or target_file.lower() == 'y' or target_file == '0':
-            target_file = target_file
-        elif target_file.lower() == '' or target_file.lower() == 'y' or target_file == '1':
-            target_file += '.1'
-        else:
-            target_file = os.devnull()
+        existing_check = raw_input(
+            internal.extra.colors.BOLD +
+            "Warning! File " + target_file +
+            " exists.\nOverwrite [y/0/Enter] or back-up [b/1]?" +
+            internal.extra.colors.ENDC)
+        if existing_check.lower() == 'b' or existing_check == '1':
+            target_file += '.bak'
+        elif existing_check != '' or existing_check.lower() != 'y' or existing_check != '0':
+            target_file = origin_file
     print("Target file: " + target_file + " selected.")
     os.rename(origin_file, target_file)
 

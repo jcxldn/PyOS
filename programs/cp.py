@@ -34,14 +34,5 @@ def app():
     target_file = raw_input(internal.extra.colors.BOLD + "Enter filename to copy to [Enter to backup]:"  + internal.extra.colors.ENDC)
     if target_file == "":
         target_file = origin_file + ".bak"
-    if os.path.isfile(target_file):
-        target_file = raw_input(internal.extra.colors.BOLD + "Warning! File " + target_file + "exists.\n\
-                                Overwrite [y/0/Enter] or back-up [b/1]?"  + internal.extra.colors.ENDC)
-        if target_file.lower() == '' or target_file.lower() == 'y' or target_file == '0':
-            target_file = target_file
-        elif target_file.lower() == '' or target_file.lower() == 'y' or target_file == '1':
-            target_file += '.1'
-        else:
-            target_file = os.devnull()
     print("Target file: " + target_file + " selected.")
     shutil.copy(origin_file, target_file)
