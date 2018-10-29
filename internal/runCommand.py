@@ -17,6 +17,7 @@ import programs.ls
 import programs.pwd
 import programs.cp
 import programs.mv
+import programs.mkdir
 
 # Commands
 
@@ -93,6 +94,11 @@ class commands(object):
     def mv():
         # Run external file
         programs.mv.app()
+
+    @staticmethod
+    def mkdir():
+        # Run external file
+        programs.mkdir.app()
 
 # Check if command is valid
 def isValid(command):
