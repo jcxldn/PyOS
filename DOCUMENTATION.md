@@ -10,6 +10,8 @@ All current commands listed in alphabetical order.
 
 `clear` / `cls` - Clears the screen.
 
+`cd` - Changes working directory
+
 `downloader` - Downloads a file from the internet
 
 `example` - An example program.
