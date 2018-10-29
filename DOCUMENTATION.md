@@ -4,7 +4,7 @@
 
 All current commands listed in alphabetical order.
 
-`about` - Basic infomation about PyOS.
+`about` - Basic information about PyOS.
 
 `calc` - A calculator.
 
@@ -17,6 +17,10 @@ All current commands listed in alphabetical order.
 `fizzbuzz` - A fizzbuzz program.
 
 `help` - View a list of commands.
+
+`ls` - List the contents of your current directory.
+
+`pwd` - List the current working directory.
 
 `sysinfo` - View system information.
 
