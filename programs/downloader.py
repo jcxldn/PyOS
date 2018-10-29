@@ -15,7 +15,8 @@ def app():
 
     url = raw_input("Enter file url: ")
     file_name = url.split("/")
-    file_name = file_name[len(file_name) - 1]
+    file_name_index = len(file_name) - 1
+    file_name = file_name[file_name_index]
     print "Downloading..."
     try:
         r = requests.get(url)
