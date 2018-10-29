@@ -15,6 +15,8 @@ import programs.example
 import programs.fizzbuzz
 import programs.ls
 import programs.pwd
+import programs.cp
+import programs.mv
 
 # Commands
 
@@ -81,6 +83,16 @@ class commands(object):
     def pwd():
         # Run external file
         programs.pwd.app()
+
+    @staticmethod
+    def cp():
+        # Run external file
+        programs.cp.app()
+
+    @staticmethod
+    def mv():
+        # Run external file
+        programs.mv.app()
 
 # Check if command is valid
 def isValid(command):
