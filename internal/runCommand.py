@@ -82,6 +82,11 @@ class commands(object):
         # Run external file
         programs.pwd.app()
 
+    @staticmethod
+    def snake_game():
+        # Starts Snake Game
+        programs.snake_game.app()
+
 # Check if command is valid
 def isValid(command):
     if command in [ x for x in dir(commands) if "_" not in x ]:
