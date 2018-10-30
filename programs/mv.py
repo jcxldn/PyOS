@@ -6,7 +6,7 @@
 # PyOS Scripts
 import internal.extra
 import os
-from cp import displayCwdFiles, getFileOrigin
+from programs.cp import displayCwdFiles, getFileOrigin
 
 
 def app():
