@@ -6,83 +6,82 @@ end = 100
 def check_ladder(points):
     if points == 8:
         print 'Ladder'
-        return 26
+        points = 26
     elif points == 21:
         print 'Ladder'
-        return 82
+        points = 82
     elif points == 43:
         print 'Ladder'
-        return 77
+        points = 77
     elif points == 50:
         print 'Ladder'
-        return 91
+        points = 91
     elif points == 54:
         print 'Ladder'
-        return 93
+        points = 93
     elif points == 62:
         print 'Ladder'
-        return 96
+        points = 96
     elif points == 66:
         print 'Ladder'
-        return 87
+        points = 87
     elif points == 80:
         print 'Ladder'
-        return 100
+        points = 100
     else:
         # Not a ladder
         return points
+    return points
 
 
 def check_snake(points):
     if points == 44:
         print 'Snake'
-        return 22
+        points = 22
     elif points == 46:
         print 'Snake'
-        return 5
+        points = 5
     elif points == 48:
         print 'Snake'
-        return 9
+        points = 9
     elif points == 52:
         print 'Snake'
-        return 11
+        points = 11
     elif points == 55:
         print 'Snake'
-        return 7
+        points = 7
     elif points == 59:
         print 'Snake'
-        return 17
+        points = 17
     elif points == 64:
         print 'Snake'
-        return 36
+        points = 36
     elif points == 69:
         print 'Snake'
-        return 33
+        points = 33
     elif points == 73:
         print 'Snake'
-        return 1
+        points = 1
     elif points == 83:
         print 'Snake'
-        return 19
+        points = 19
     elif points == 92:
         print 'Snake'
-        return 51
+        points = 51
     elif points == 95:
         print 'Snake'
-        return 24
+        points = 24
     elif points == 98:
         print 'Snake'
-        return 28
+        points = 28
     else:
         # Not a snake
         return points
+    return points
 
 
 def reached_end(points):
-    if points == end:
-        return True
-    else:
-        return False
+    return bool(points == end)
 
 
 def play():
