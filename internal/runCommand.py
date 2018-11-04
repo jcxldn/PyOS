@@ -19,6 +19,7 @@ import programs.cp
 import programs.mv
 import programs.mkdir
 import programs.downloader
+import programs.snake
 
 # Commands
 
@@ -107,9 +108,9 @@ class commands(object):
         programs.downloader.app()
 
     @staticmethod
-    def snake_game():
+    def snake():
         # Starts Snake Game
-        programs.snake_game.app()
+        programs.snake.app()
 
 # Check if command is valid
 def isValid(command):

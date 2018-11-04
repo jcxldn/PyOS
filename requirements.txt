@@ -3,3 +3,4 @@ readline; sys_platform == 'linux2'
 readline; sys_platform == 'darwin'
 distutils
 requests
+pygame
