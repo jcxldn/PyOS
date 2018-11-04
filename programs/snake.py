@@ -1,6 +1,20 @@
-import pygame
-import sys
+# PyOS
+# Made for Python 2.7
+# internal/programs/snake.py
+
+# Import Libraries
 from random import SystemRandom
+
+# Import PyGame with sdout disabled
+import os, sys
+with open(os.devnull, 'w') as f:
+    # Disable Stdout
+    oldstdout = sys.stdout
+    sys.stdout = f
+    # Import PyGame
+    import pygame
+    # Enable Stdout
+    sys.stdout = oldstdout
 
 # Snake Class
 class Snake():
