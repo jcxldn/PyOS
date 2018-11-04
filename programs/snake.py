@@ -90,26 +90,29 @@ class Launcher:
         self.food.init()
 
     def start(self):
-        while True:
-            for event in pygame.event.get():
-                self.check_events(event)
+        try:
+            while True:
+                for event in pygame.event.get():
+                    self.check_events(event)
 
-            foodPos = self.food.spawnFood()
-            if (self.snake.move(foodPos)):
-                self.score += 1
-                self.food.setFoodOnScreen(False)
+                foodPos = self.food.spawnFood()
+                if (self.snake.move(foodPos)):
+                    self.score += 1
+                    self.food.setFoodOnScreen(False)
 
-            self.window.fill(pygame.Color(0, 255, 0))
-            for pos in self.snake.getBody():
-                pygame.draw.rect(self.window, pygame.Color(255, 0, 0), pygame.Rect(pos[0], pos[1], 10, 10))
-                pygame.draw.rect(self.window, pygame.Color(100, 100, 100), pygame.Rect(foodPos[0], foodPos[1], 10, 10))
+                self.window.fill(pygame.Color(0, 255, 0))
+                for pos in self.snake.getBody():
+                    pygame.draw.rect(self.window, pygame.Color(255, 0, 0), pygame.Rect(pos[0], pos[1], 10, 10))
+                    pygame.draw.rect(self.window, pygame.Color(100, 100, 100), pygame.Rect(foodPos[0], foodPos[1], 10, 10))
 
-            if (self.snake.checkCollision()):
-                gameOver()
+                if (self.snake.checkCollision()):
+                    gameOver()
 
-            pygame.display.set_caption("HacktoberFest Snake Game | Score: " + str(self.score))
-            pygame.display.flip()
-            self.fps.tick(24)
+                pygame.display.set_caption("HacktoberFest Snake Game | Score: " + str(self.score))
+                pygame.display.flip()
+                self.fps.tick(24)
+        except:
+            pass
 
     def check_events(self, event):
         if event.type == pygame.QUIT:
@@ -133,9 +136,10 @@ def app():
 
 # Gameover function, outside any class structure.
 def gameOver():
-    print("Ouch!, Game Over!")
     pygame.quit()
-    sys.exit()
+    print("Ouch!, Game Over!")
+    # sys.exit()
+
 
 if __name__ == "__main__":
     app()
