@@ -15,6 +15,9 @@ import programs.example
 import programs.fizzbuzz
 import programs.ls
 import programs.pwd
+import programs.cp
+import programs.mv
+import programs.mkdir
 import programs.downloader
 
 # Commands
@@ -82,6 +85,21 @@ class commands(object):
     def pwd():
         # Run external file
         programs.pwd.app()
+
+    @staticmethod
+    def cp():
+        # Run external file
+        programs.cp.app()
+
+    @staticmethod
+    def mv():
+        # Run external file
+        programs.mv.app()
+
+    @staticmethod
+    def mkdir():
+        # Run external file
+        programs.mkdir.app()
 
     @staticmethod
     def downloader():
