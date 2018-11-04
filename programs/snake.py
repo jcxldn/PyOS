@@ -4,7 +4,8 @@ from random import SystemRandom
 
 # Snake Class
 class Snake():
-    def __init__(self):
+
+    def init(self):
         self.position = [100, 50]
         self.body = [[100, 50], [90, 50], [80, 50]]
         self.direction = "RIGHT"
@@ -59,7 +60,7 @@ class Food():
 
     cryptogen = SystemRandom()
 
-    def __init__(self):
+    def init(self):
         self.position = [self.cryptogen.randrange(1, 50)*10, self.cryptogen.randrange(1, 50)*10]
         self.isFoodOnScreen = True
 
@@ -76,14 +77,17 @@ class Food():
 class Launcher:
 
     # Initialise global variables for display properties
-    def __init__(self):
+    def init(self):
         self.window = pygame.display.set_mode((500, 500))
         pygame.display.set_caption("Hacktoberfest Snake Game")
         self.fps = pygame.time.Clock()
-
         self.score = 0
+
         self.snake = Snake()
+        self.snake.init()
+
         self.food = Food()
+        self.food.init()
 
     def start(self):
         while True:
@@ -121,9 +125,10 @@ class Launcher:
                 self.snake.changeDirectionOfSnake('LEFT')
 
 
-# Main Function, where we call initialise the game.
+# Main Function, where we initialise game.
 def app():
     launcher = Launcher()
+    launcher.init()
     launcher.start()
 
 # Gameover function, outside any class structure.
