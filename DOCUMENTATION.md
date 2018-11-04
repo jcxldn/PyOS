@@ -10,6 +10,8 @@ All current commands listed in alphabetical order.
 
 `clear` / `cls` - Clears the screen.
 
+`downloader` - Downloads a file from the internet
+
 `example` - An example program.
 
 `exit` - Quit PyOS.
@@ -21,6 +23,12 @@ All current commands listed in alphabetical order.
 `ls` - List the contents of your current directory.
 
 `pwd` - List the current working directory.
+
+`mv` - Move (rename) a file to another. 
+
+`cp` - Copy one file to another. 
+
+`mkdir` - Create directories. 
 
 `sysinfo` - View system information.
 
