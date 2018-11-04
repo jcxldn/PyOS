@@ -22,6 +22,12 @@ All current commands listed in alphabetical order.
 
 `pwd` - List the current working directory.
 
+`mv` - Move (rename) a file to another. 
+
+`cp` - Copy one file to another. 
+
+`mkdir` - Create directories. 
+
 `sysinfo` - View system information.
 
 `updater` - Check for updates on GitHub (requires internet access)
