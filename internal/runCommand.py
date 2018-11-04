@@ -18,6 +18,7 @@ import programs.pwd
 import programs.cp
 import programs.mv
 import programs.mkdir
+import programs.downloader
 
 # Commands
 
@@ -99,6 +100,11 @@ class commands(object):
     def mkdir():
         # Run external file
         programs.mkdir.app()
+
+    @staticmethod
+    def downloader():
+        # Run external file
+        programs.downloader.app()
 
 # Check if command is valid
 def isValid(command):
