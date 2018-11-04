@@ -6,7 +6,8 @@
 from random import SystemRandom
 
 # Import PyGame with sdout disabled
-import os, sys
+import os
+import sys
 with open(os.devnull, 'w') as f:
     # Disable Stdout
     oldstdout = sys.stdout
@@ -125,7 +126,7 @@ class Launcher:
                 pygame.display.set_caption("HacktoberFest Snake Game | Score: " + str(self.score))
                 pygame.display.flip()
                 self.fps.tick(24)
-        except:
+        except Exception:
             pass
 
     def check_events(self, event):
