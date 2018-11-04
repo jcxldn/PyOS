@@ -4,9 +4,8 @@
 [![codebeat badge](https://codebeat.co/badges/f326bb09-b832-4fd9-84f2-d16dd7428c79)](https://codebeat.co/projects/github-com-prouser123-pyos-master)
 [![CodeFactor](https://www.codefactor.io/repository/github/prouser123/pyos/badge)](https://www.codefactor.io/repository/github/prouser123/pyos)
 
-
+![Lines of Code](https://tokei.rs/b1/github/Prouser123/PyOS)
 ![GitHub (pre-)release](https://img.shields.io/github/release/Prouser123/PyOS/all.svg)
-
 
 A Python CLI made for Python 2.
 
