@@ -34,7 +34,7 @@ All current commands listed in alphabetical order.
 
 `updater` - Check for updates on GitHub (requires internet access)
 
-`snake_game` - A 2D-Snake game built using Pygame and Python.
+`snake` - A 2D-Snake game built using Pygame and Python.
 
 ## Versioning
 We try to follow the [Semver Standard](https://semver.org/).
