@@ -104,9 +104,9 @@ class commands(object):
         programs.mkdir.app()
 
     @staticmethod
-    def downloader():
+    def downloader(args):
         # Run external file
-        programs.downloader.app()
+        programs.downloader.app(args)
 
     @staticmethod
     def snake():
@@ -120,11 +120,12 @@ class commands(object):
 
 # Check if command is valid
 def isValid(command):
-    if command in [ x for x in dir(commands) if "_" not in x ]:
+    args = command.split(" ")
+    if args[0] in [ x for x in dir(commands) if "_" not in x ]:
         # print(extra.colors.OKBLUE + "Command is valid." + extra.colors.ENDC)
 
         # Run the command
-        getattr(commands, command)()
+        getattr(commands, args[0])(args)
 
     else:
         # Print an error

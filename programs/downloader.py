@@ -9,11 +9,20 @@ import internal.runCommand
 # Requests library
 import requests
 
-def app():
+class Application:
+    usage_message = "Usage: %s [url]" % "downloader"
+
+def app(args):
+    if (len(args) != 2):
+        print(Application.usage_message)
+        return
+        
     internal.runCommand.commands.clear()
     print internal.extra.colors.BOLD + "Downloader" + internal.extra.colors.ENDC
 
-    url = raw_input("Enter file url: ")
+    # url = raw_input("Enter file url: ")
+    url = args[1]
+
     file_name = url.split("/")
     file_name_index = len(file_name) - 1
     file_name = file_name[file_name_index]
