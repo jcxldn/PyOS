@@ -20,6 +20,7 @@ import programs.mv
 import programs.mkdir
 import programs.downloader
 import programs.snake
+import programs.showallcolors
 
 # Commands
 
@@ -111,6 +112,11 @@ class commands(object):
     def snake():
         # Starts Snake Game
         programs.snake.app()
+    
+    @staticmethod
+    def showallcolors():
+        # Starts Snake Game
+        programs.showallcolors.app()
 
 # Check if command is valid
 def isValid(command):
