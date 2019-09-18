@@ -125,7 +125,11 @@ def isValid(command):
         # print(extra.colors.OKBLUE + "Command is valid." + extra.colors.ENDC)
 
         # Run the command
-        getattr(commands, args[0])(args)
+        try:
+            getattr(commands, args[0])(args)
+        except TypeError:
+            # The command does not support arguments
+            getattr(commands, args[0])()
 
     else:
         # Print an error
