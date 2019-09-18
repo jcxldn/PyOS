@@ -1,6 +1,6 @@
 pyreadline; sys_platform == 'win32'
 readline; sys_platform == 'linux2'
 readline; sys_platform == 'darwin'
-distutils
 requests
 pygame
+# you will also need distutils if you don't already have it
