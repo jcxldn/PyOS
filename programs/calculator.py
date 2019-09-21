@@ -15,7 +15,7 @@ validModes = (["a", "s", "m", "d"])
 from internal.baseapp import BaseApp
 
 class App(BaseApp):
-    def go(self):
+    def go(self, args):
         self.clear()
         #print(internal.extra.colors.BOLD + self.global_name + " " + appName + internal.extra.colors.ENDC)
         print(self.Colors.Bold(self.global_name + " " + appName))

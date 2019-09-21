@@ -148,7 +148,7 @@ class Launcher:
 
 # Main Function, where we initialise game.
 class App(BaseApp):
-    def go(self):
+    def go(self, args):
         launcher = Launcher()
         launcher.init()
         launcher.start()

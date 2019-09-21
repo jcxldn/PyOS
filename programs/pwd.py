@@ -9,5 +9,5 @@ import os
 from internal.baseapp import BaseApp
 
 class App(BaseApp):
-    def go(self):
+    def go(self, args):
         print(self.Colors.Green("Current working directory: ") + self.Colors.Blue(os.getcwd()))

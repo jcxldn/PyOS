@@ -7,7 +7,7 @@
 from internal.baseapp import BaseApp
 
 class App(BaseApp):
-    def go(self):
+    def go(self, args):
         # This is the function that will run when the 'example' command is typed in.
 
         # Clear the console screen

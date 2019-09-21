@@ -8,7 +8,7 @@ import sys
 from internal.baseapp import BaseApp
 
 class App(BaseApp):
-    def go(self):
+    def go(self, args):
         for i in range(0, 16):
             for j in range(0, 16):
                 code = str(i * 16 + j)

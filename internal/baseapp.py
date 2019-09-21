@@ -32,12 +32,9 @@ class BaseApp:
         # The check passed, run the program code.
         self.go(args)
     
-    def go(self):
+    def go(self, args):
         print("Hello, World!")
         print("There was no go function defined in your code. :(")
-
-    def go(self, args):
-        self.go()
 
     def warn(self, msg):
         print(self.Colors.Warning(msg))

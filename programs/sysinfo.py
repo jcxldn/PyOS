@@ -12,7 +12,7 @@ import os
 from internal.baseapp import BaseApp
 
 class App(BaseApp):
-    def go(self):
+    def go(self, args):
         print(self.Colors.Bold("System Infomation"))
         # Print PyOS Version
         print(self.global_name + " " + self.global_ver)
