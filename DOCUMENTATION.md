@@ -36,6 +36,8 @@ All current commands listed in alphabetical order.
 
 `snake` - A 2D-Snake game built using Pygame and Python.
 
+`showallcolors` - Display all colors supported by your terminal.
+
 ## Versioning
 We try to follow the [Semver Standard](https://semver.org/).
 
