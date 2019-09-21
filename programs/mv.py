@@ -22,10 +22,8 @@ class App(BaseApp):
                 return
             elif args[3] == "force":
                 print(self.Colors.Warning("You have used the force flag, which will overwrite existing files."))
-                
                 # Remove the destination file as we already check for duplicates.
                 os.remove(dst)
-
                 break
 
         if args[2] == "":

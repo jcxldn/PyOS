@@ -28,7 +28,7 @@ class BaseApp:
         if (len(args) <= self.required_args):
             print("Usage: " + self.usage_message)
             return
-        
+
         # The check passed, run the program code.
         self.go(args)
 
