@@ -65,6 +65,9 @@ class BasicCommands(object):
         print("Author: " + internal.extra.notes.author)
         print("For more infomation please read the README.md and DOCUMENTATION.md files in the project folder.")
 
+    @staticmethod
+    def updater():
+        internal.update.runscript.app()
 
 # Check if command is valid
 def isValid(command):
