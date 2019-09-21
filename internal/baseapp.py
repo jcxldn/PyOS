@@ -3,6 +3,7 @@
 # internal/baseapp.py
 
 import internal.extra
+import internal.runCommand
 
 class BaseApp:
     usage_message = "Message not found."
@@ -28,3 +29,6 @@ class BaseApp:
 
     def warn(self, message):
         print(internal.extra.colors.WARNING + message + internal.extra.colors.ENDC)
+
+    def clear(self):
+        internal.runCommand.BasicCommands.clear()

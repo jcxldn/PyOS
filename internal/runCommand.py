@@ -21,7 +21,6 @@ import programs.mkdir
 import programs.downloader
 import programs.snake
 import programs.showallcolors
-import programs.help
 
 def getValidCommands():
     return [ x for x in dir(programs) if "_" not in x ] + getBasicCommands()
