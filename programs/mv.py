@@ -31,7 +31,7 @@ class App(BaseApp):
         if args[2] == "":
             dst = src + ".bak"
             args[2] = dst.split("\\")[1]
-        
+
         print("Moving: '" + args[1] + "' to '" + args[2] + "'")
 
         # Rename / move the file

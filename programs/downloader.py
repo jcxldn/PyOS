@@ -1,27 +1,15 @@
-# PyOS
-# Made for Python 2.7
-# programs/downloader.py
-
-# Import Libraries
-# PyOS Scripts
-import internal.extra
-import internal.runCommand
-
-# Requests library
 import requests
 
-
 from internal.baseapp import BaseApp
+
 class App(BaseApp):
     usage_message = "downloader [url] <filename>"
     required_args = 1
 
     def go(self, args):
-        
         self.clear()
         print(self.Colors.Bold("Downloader"))
 
-        # url = raw_input("Enter file url: ")
         url = args[1]
 
         file_name = url.split("/")

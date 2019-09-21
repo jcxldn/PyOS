@@ -24,4 +24,3 @@ class App(BaseApp):
         print("Copying: '" + args[1] + "' to '" + args[2] + "'")
         #print("Copying: " + src + " to " + dst)
         shutil.copy(src, dst)
-        

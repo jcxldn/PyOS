@@ -31,7 +31,7 @@ class BaseApp:
         
         # The check passed, run the program code.
         self.go(args)
-    
+
     def go(self, args):
         print("Hello, World!")
         print("There was no go function defined in your code. :(")

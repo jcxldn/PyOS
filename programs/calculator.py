@@ -1,18 +1,7 @@
-# PyOS
-# Made for Python 2.7
-# programs/calculator.py
-
-# Import Libraries
-# PyOS Scripts
-import internal.extra
-import internal.runCommand
-
-# Variables
+from internal.baseapp import BaseApp
 
 appName = ("Calculator")
 validModes = (["a", "s", "m", "d"])
-
-from internal.baseapp import BaseApp
 
 class App(BaseApp):
     def go(self, args):
