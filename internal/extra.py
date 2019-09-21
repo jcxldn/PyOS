@@ -10,7 +10,7 @@ import os
 
 class notes:
     name = ("PyOS")
-    ver = ("2.2-base-master")
+    ver = ("3.0-base-master")
     author = ("Prouser123")
     helpmsg = ("Type 'help' for a list of commands.")
 
