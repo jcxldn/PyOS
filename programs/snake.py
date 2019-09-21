@@ -17,6 +17,9 @@ with open(os.devnull, 'w') as f:
     # Enable Stdout
     sys.stdout = oldstdout
 
+# Import the base application class.
+from internal.baseapp import BaseApp
+
 # Snake Class
 class Snake():
 
@@ -144,10 +147,11 @@ class Launcher:
 
 
 # Main Function, where we initialise game.
-def app():
-    launcher = Launcher()
-    launcher.init()
-    launcher.start()
+class App(BaseApp):
+    def go(self, args):
+        launcher = Launcher()
+        launcher.init()
+        launcher.start()
 
 # Gameover function, outside any class structure.
 def gameOver():

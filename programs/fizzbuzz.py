@@ -2,19 +2,24 @@
 # Made for Python 2.7
 # programs/fizzbuzz.py
 
-# Import Libraries
-# PyOS Scripts
-import internal.extra
+# Import the base application class.
+from internal.baseapp import BaseApp
 
-def app():
-    print(internal.extra.colors.BOLD + "FizzBuzz" + internal.extra.colors.ENDC)
-    upto = int(raw_input("Up to number [int]: "))
-    for num in range(1,upto + 1):
-        string = ""
-        if num % 3 == 0:
-            string = string + "Fizz"
-        if num % 5 == 0:
-            string = string + "Buzz"
-        if num % 5 != 0 and num % 3 != 0:
-            string = string + str(num)
-        print(string)
+class App(BaseApp):
+    def go(self, args):
+        print(self.Colors.Bold("FizzBuzz"))
+
+        if (len(args) >= 2):
+            upto = int(args[1])
+        else:
+            upto = 100
+
+        for num in range(1,upto + 1):
+            string = ""
+            if num % 3 == 0:
+                string = string + "Fizz"
+            if num % 5 == 0:
+                string = string + "Buzz"
+            if num % 5 != 0 and num % 3 != 0:
+                string = string + str(num)
+            print(string)

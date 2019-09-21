@@ -3,10 +3,11 @@
 # programs/pwd.py
 
 # Import Libraries
-# PyOS Scripts
-import internal.extra
 import os
 
-def app():
-    print(internal.extra.colors.OKGREEN + "Current working directory:" + internal.extra.colors.ENDC)
-    print(os.getcwd())
+# Import the base application class.
+from internal.baseapp import BaseApp
+
+class App(BaseApp):
+    def go(self, args):
+        print(self.Colors.Green("Current working directory: ") + self.Colors.Blue(os.getcwd()))
