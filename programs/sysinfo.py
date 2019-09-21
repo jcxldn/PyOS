@@ -7,24 +7,26 @@ import platform
 import getpass
 import socket
 import os
-# PyOS Scripts
-import internal.extra
 
-def app():
-    print(internal.extra.colors.BOLD + "System Infomation" + internal.extra.colors.ENDC)
-    # Print PyOS Version
-    print(internal.extra.notes.name + " " + internal.extra.notes.ver  + internal.extra.colors.ENDC)
-    # Print System Version
-    print("Python " + internal.extra.system.pyVer)
-    print("OS: " + platform.system() + ' ' + platform.release())
-    print("OS Build: " + platform.version())
-    print("Architecture: " + platform.machine())
-    print("User: " + getpass.getuser())
-    print("Hostname: " + socket.gethostname())
-    print("Process ID: " + str(os.getpid()))
-    print("Working Directory: " + os.getcwd())
-    try:
-        # This will fail on Windows, we will just ignore it.
-        print("Home Directory: " + os.environ['HOME'])
-    except Exception:
-        return
+# Import the base application class.
+from internal.baseapp import BaseApp
+
+class App(BaseApp):
+    def go(self):
+        print(self.Colors.Bold("System Infomation"))
+        # Print PyOS Version
+        print(self.global_name + " " + self.global_ver)
+        # Print System Version
+        print("Python " + self.global_python_version)
+        print("OS: " + platform.system() + ' ' + platform.release())
+        print("OS Build: " + platform.version())
+        print("Architecture: " + platform.machine())
+        print("User: " + getpass.getuser())
+        print("Hostname: " + socket.gethostname())
+        print("Process ID: " + str(os.getpid()))
+        print("Working Directory: " + os.getcwd())
+        try:
+            # This will fail on Windows, we will just ignore it.
+            print("Home Directory: " + os.environ['HOME'])
+        except Exception:
+            return
