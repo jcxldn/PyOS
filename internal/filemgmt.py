@@ -11,3 +11,6 @@ class FileManagement:
     def createIfNotPresent(self):
         if not os.path.exists(self.data_folder):
             os.makedirs(self.data_folder)
+
+    def getFullFilePath(self, filename):
+        return os.path.relpath('.\\' + self.data_folder + "\\" + filename, os.getcwd())

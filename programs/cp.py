@@ -30,18 +30,26 @@ def getFileOrigin(file_list):
     return origin_file
 
 
-def app():
-    print(internal.extra.colors.OKGREEN + "Copying files: " + internal.extra.colors.ENDC)
-    print(internal.extra.colors.BOLD + "File to copy from (enter filename or number of file): " + internal.extra.colors.ENDC)
-    file_list = displayCwdFiles()
-    origin_file = getFileOrigin(file_list)
-    # Validate chosen file to copy
-    while not os.path.isfile(origin_file):
-        print(internal.extra.colors.BOLD + "Warning! file " + origin_file + " does not yet exist.\n\n" + internal.extra.colors.ENDC)
-        origin_file = getFileOrigin(file_list)
-    print(internal.extra.colors.BOLD + origin_file + " selected for copying." + internal.extra.colors.ENDC)
-    target_file = raw_input(internal.extra.colors.BOLD + "Enter filename to copy to [Enter to backup]:" + internal.extra.colors.ENDC)
-    if target_file == "":
-        target_file = origin_file + ".bak"
-    print("Target file: " + target_file + " selected.")
-    shutil.copy(origin_file, target_file)
+from internal.baseapp import BaseApp
+class App(BaseApp):
+    usage_message = "cp [source] [dest]"
+    required_args = 2
+
+    def go(self, args):
+
+        src = self.FileMgmt.getFullFilePath(args[1])
+        dst = self.FileMgmt.getFullFilePath(args[2])
+
+        # Validate chosen file to copy
+        while not os.path.isfile(src):
+            print(self.Colors.Warning("Warning! File " + args[1] + " does not exist!"))
+            return
+        
+        if args[2] == "":
+            dst = src + ".bak"
+            args[2] = dst.split("\\")[1]
+        
+        print("Copying: " + args[1] + " to " + args[2])
+        #print("Copying: " + src + " to " + dst)
+        shutil.copy(src, dst)
+        
