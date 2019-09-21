@@ -4,11 +4,17 @@
 
 import internal.extra
 import internal.runCommand
+import internal.colors
 
 class BaseApp:
+    # Colors Class
+    Colors = internal.colors.Colors()
+
     # Global variables
     global_name = internal.extra.notes.name
     global_ver = internal.extra.notes.ver
+    global_author = internal.extra.notes.author
+    global_python_version = internal.extra.system.pyVer
 
     # Program Specific Variables
     usage_message = "Message not found."
@@ -32,8 +38,8 @@ class BaseApp:
     def go(self, args):
         self.go()
 
-    def warn(self, message):
-        print(internal.extra.colors.WARNING + message + internal.extra.colors.ENDC)
+    def warn(self, msg):
+        print(self.Colors.Warning(msg))
 
     def clear(self):
         internal.runCommand.BasicCommands.clear()

@@ -19,7 +19,7 @@ class App(BaseApp):
     def go(self, args):
         
         self.clear()
-        print internal.extra.colors.BOLD + "Downloader" + internal.extra.colors.ENDC
+        print(self.Colors.Bold("Downloader"))
 
         # url = raw_input("Enter file url: ")
         url = args[1]

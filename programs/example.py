@@ -2,9 +2,6 @@
 # Made for Python 2.7
 # programs/example.py
 
-# Import the internal.extra script and give it the shortcut of 'e'.
-import internal.extra as e
-
 
 # Import the base application class.
 from internal.baseapp import BaseApp
@@ -14,16 +11,13 @@ class App(BaseApp):
         # This is the function that will run when the 'example' command is typed in.
 
         # Clear the console screen
-        e.cls()
+        self.clear()
 
         """
-        This line of code below the BOLD text style, prints some text and resets the text style.
-        You can use the internal.extra.colors class to use text styles.
-
-        In this script internal.extra has been set to 'e',
-        so e.colors will work to access color styles.
+        This line of code print "PyOS Example Program" in Bold.
+        You can use self.Colors to use other text styles and colors.
         """
-        print(e.colors.BOLD + "PyOS Example Program" + e.colors.ENDC)
+        print(self.Colors.Bold("PyOS Example Program"))
 
         # Print sample text
         print("Hello, World!")

@@ -22,6 +22,10 @@ import programs.downloader
 import programs.snake
 import programs.showallcolors
 
+# Setup colors
+import internal.colors
+Colors = internal.colors.Colors()
+
 def getValidCommands():
     return [ x for x in dir(programs) if "_" not in x ] + getBasicCommands()
 
@@ -55,7 +59,9 @@ class BasicCommands(object):
     @staticmethod
     def about():
         # Run code below (no function necessary)
-        print(internal.extra.colors.BOLD + internal.extra.notes.name + " " + internal.extra.notes.ver + internal.extra.colors.ENDC)
+        # print(internal.extra.colors.BOLD + internal.extra.notes.name + " " + internal.extra.notes.ver + internal.extra.colors.ENDC)
+        print(Colors.Bold(internal.extra.notes.name + " " + internal.extra.notes.ver))
+
         print("Author: " + internal.extra.notes.author)
         print("For more infomation please read the README.md and DOCUMENTATION.md files in the project folder.")
 
@@ -75,4 +81,5 @@ def isValid(command):
 
     else:
         # Print an error
-        print (internal.extra.colors.FAIL + "Invalid command. " + internal.extra.notes.helpmsg + internal.extra.colors.ENDC)
+        # print (internal.extra.colors.FAIL + "Invalid command. " + internal.extra.notes.helpmsg + internal.extra.colors.ENDC)
+        print(Colors.Red("Invalid command. " + internal.extra.notes.helpmsg))

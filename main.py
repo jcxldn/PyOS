@@ -14,6 +14,10 @@ except ImportError:
 import internal.extra
 import internal.runCommand
 
+# Setup colors
+import internal.colors
+Colors = internal.colors.Colors()
+
 # Command Auto Completer
 
 def cmd_complete(text, state):
@@ -38,7 +42,8 @@ def cmd_loop():
 # Clear the screen
 internal.extra.cls()
 # Print the name and version
-print(internal.extra.colors.BOLD + internal.extra.notes.name + " " + internal.extra.notes.ver + " - " + internal.extra.colors.WARNING + "Made for Python 2.7" + internal.extra.colors.ENDC)
+#print(internal.extra.colors.BOLD + internal.extra.notes.name + " " + internal.extra.notes.ver + " - " + internal.extra.colors.WARNING + "Made for Python 2.7" + internal.extra.colors.ENDC)
+print(Colors.Bold(internal.extra.notes.name + " " + internal.extra.notes.ver + " - ") + Colors.Warning("Made for Python 2.7"))
 # Print python version
 print ("Running on Python " + internal.extra.system.pyVer)
 print(internal.extra.notes.helpmsg)

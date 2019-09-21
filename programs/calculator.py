@@ -17,12 +17,17 @@ from internal.baseapp import BaseApp
 class App(BaseApp):
     def go(self):
         self.clear()
-        print(internal.extra.colors.BOLD + self.global_name + " " + appName + internal.extra.colors.ENDC)
+        #print(internal.extra.colors.BOLD + self.global_name + " " + appName + internal.extra.colors.ENDC)
+        print(self.Colors.Bold(self.global_name + " " + appName))
         self.__modeselect()
 
     def __modeselect(self):
-        print(internal.extra.colors.OKGREEN + "Choose a mode" + internal.extra.colors.ENDC)
-        print(internal.extra.colors.OKBLUE + "(A)dd - (S)ubtract - (M)ultiply - (D)ivide - (E)xit" + internal.extra.colors.ENDC)
+        #print(internal.extra.colors.OKGREEN + "Choose a mode" + internal.extra.colors.ENDC)
+        print(self.Colors.Green("Choose a mode"))
+
+        #print(internal.extra.colors.OKBLUE + "(A)dd - (S)ubtract - (M)ultiply - (D)ivide - (E)xit" + internal.extra.colors.ENDC)
+        print(self.Colors.Blue("(A)dd - (S)ubtract - (M)ultiply - (D)ivide - (E)xit"))
+
         choice = raw_input("Mode > ").lower()
         if choice in validModes:
             number1 = raw_input("First Number > ")
