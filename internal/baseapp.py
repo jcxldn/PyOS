@@ -5,10 +5,14 @@
 import internal.extra
 import internal.runCommand
 import internal.colors
+import internal.filemgmt
 
 class BaseApp:
     # Colors Class
     Colors = internal.colors.Colors()
+
+    # FileManagement Class
+    FileMgmt = internal.filemgmt.FileManagement()
 
     # Global variables
     global_name = internal.extra.notes.name

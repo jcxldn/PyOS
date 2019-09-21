@@ -108,3 +108,6 @@ ENV/
 
 # VSCode settings
 .vscode/
+
+# PyOS User Data folder
+userdata/

@@ -38,8 +38,7 @@ class App(BaseApp):
             if (len(args) >= 3 and args[2] != ""):
                 file_name = args[2]
 
-        
-            with open(file_name, "wb") as f:
+            with self.FileMgmt.open(file_name, "wb") as f:
                 f.write(r.content)
             print "File saved as %s" % file_name
         except Exception as e:
