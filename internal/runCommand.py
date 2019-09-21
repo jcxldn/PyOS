@@ -72,12 +72,7 @@ def isValid(command):
             getattr(BasicCommands, args[0])()
         else:
             # Item is in it's own file.
-            try:
-                #getattr(commands, args[0])(args)
-                getattr(programs, args[0]).App(args)
-            except TypeError:
-             # The command does not support arguments
-                getattr(programs, args[0]).App()
+            getattr(programs, args[0]).App(args)
 
     else:
         # Print an error

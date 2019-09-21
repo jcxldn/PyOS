@@ -6,18 +6,19 @@
 # PyOS Scripts
 import internal.extra
 import internal.runCommand
+
 # Requests library
 import requests
 
-class App:
-    usage_message = "Usage: %s [url] <filename>" % "downloader"
 
-    def __init__(self, args):
-        if (len(args) <= 1):
-            print(self.usage_message)
-            return
+from internal.baseapp import BaseApp
+class App(BaseApp):
+    usage_message = "downloader [url] <filename>"
+    required_args = 1
+
+    def go(self, args):
         
-        internal.runCommand.commands.clear()
+        internal.runCommand.BasicCommands.clear()
         print internal.extra.colors.BOLD + "Downloader" + internal.extra.colors.ENDC
 
         # url = raw_input("Enter file url: ")
@@ -42,6 +43,4 @@ class App:
                 f.write(r.content)
             print "File saved as %s" % file_name
         except Exception as e:
-            print "An error occured"
-            if raw_input("Show error message (y/n): ") in ["y", "Y"]:
-                print e
+            self.warn(str(e))
