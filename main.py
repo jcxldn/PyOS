@@ -17,7 +17,7 @@ import internal.runCommand
 # Command Auto Completer
 
 def cmd_complete(text, state):
-    for cmd in [ x for x in dir(internal.runCommand.commands) if "_" not in x ]:
+    for cmd in internal.runCommand.getValidCommands():
         if cmd.startswith(text):
             if not state:
                 return cmd

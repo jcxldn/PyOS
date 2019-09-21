@@ -9,39 +9,39 @@ import internal.runCommand
 # Requests library
 import requests
 
-class Application:
+class App:
     usage_message = "Usage: %s [url] <filename>" % "downloader"
 
-def app(args):
-    if (len(args) <= 1):
-        print(Application.usage_message)
-        return
+    def __init__(self, args):
+        if (len(args) <= 1):
+            print(self.usage_message)
+            return
         
-    internal.runCommand.commands.clear()
-    print internal.extra.colors.BOLD + "Downloader" + internal.extra.colors.ENDC
+        internal.runCommand.commands.clear()
+        print internal.extra.colors.BOLD + "Downloader" + internal.extra.colors.ENDC
 
-    # url = raw_input("Enter file url: ")
-    url = args[1]
+        # url = raw_input("Enter file url: ")
+        url = args[1]
 
-    file_name = url.split("/")
-    file_name_index = len(file_name) - 1
-    file_name = file_name[file_name_index]
-    print "Downloading..."
-    try:
-        r = requests.get(url)
+        file_name = url.split("/")
+        file_name_index = len(file_name) - 1
+        file_name = file_name[file_name_index]
+        print "Downloading..."
+        try:
+            r = requests.get(url)
 
-        # Display some information about the request
-        print("Got code {0} in {1} seconds".format(r.status_code,  r.elapsed.total_seconds()))
+            # Display some information about the request
+            print("Got code {0} in {1} seconds".format(r.status_code,  r.elapsed.total_seconds()))
 
-        # If the user provided a filename, then we will save under that name.
-        if (len(args) >= 3 and args[2] != ""):
-            file_name = args[2]
+            # If the user provided a filename, then we will save under that name.
+            if (len(args) >= 3 and args[2] != ""):
+                file_name = args[2]
 
         
-        with open(file_name, "wb") as f:
-            f.write(r.content)
-        print "File saved as %s" % file_name
-    except Exception as e:
-        print "An error occured"
-        if raw_input("Show error message (y/n): ") in ["y", "Y"]:
-            print e
+            with open(file_name, "wb") as f:
+                f.write(r.content)
+            print "File saved as %s" % file_name
+        except Exception as e:
+            print "An error occured"
+            if raw_input("Show error message (y/n): ") in ["y", "Y"]:
+                print e

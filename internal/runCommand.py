@@ -21,20 +21,27 @@ import programs.mkdir
 import programs.downloader
 import programs.snake
 import programs.showallcolors
+import programs.help
 
-# Commands
+def getValidCommands():
+    return [ x for x in dir(programs) if "_" not in x ] + getBasicCommands()
 
-class commands(object):
+def getBasicCommands():
+    return [ x for x in dir(BasicCommands) if "_" not in x ]
+
+# Basic Commands
+
+class BasicCommands(object):
     @staticmethod
     def exit():
         print("Exiting...")
-        commands.clear()
+        BasicCommands.clear()
         sys.exit(0)
 
     @staticmethod
     def help():
         # Print all functions that do not include an underscore
-        print("Commands: " + ', '.join([ x for x in dir(commands) if "_" not in x ]))
+        print("Commands: " + ', '.join(getValidCommands()))
 
     @staticmethod
     def clear():
@@ -44,7 +51,7 @@ class commands(object):
     @staticmethod
     def cls():
         # Run built-in function
-        return commands.clear()
+        return BasicCommands.clear()
 
     @staticmethod
     def about():
@@ -53,83 +60,24 @@ class commands(object):
         print("Author: " + internal.extra.notes.author)
         print("For more infomation please read the README.md and DOCUMENTATION.md files in the project folder.")
 
-    @staticmethod
-    def calc():
-        # Run external file
-        programs.calculator.app()
-
-    @staticmethod
-    def sysinfo():
-        # Run external file
-        programs.sysinfo.app()
-
-    @staticmethod
-    def updater():
-        # Run updater file
-        internal.update.runscript.app()
-
-    @staticmethod
-    def example():
-        # Run external file
-        programs.example.app()
-
-    @staticmethod
-    def fizzbuzz():
-        # Run external file
-        programs.fizzbuzz.app()
-
-    @staticmethod
-    def ls():
-        # Run external file
-        programs.ls.app()
-
-    @staticmethod
-    def pwd():
-        # Run external file
-        programs.pwd.app()
-
-    @staticmethod
-    def cp():
-        # Run external file
-        programs.cp.app()
-
-    @staticmethod
-    def mv():
-        # Run external file
-        programs.mv.app()
-
-    @staticmethod
-    def mkdir():
-        # Run external file
-        programs.mkdir.app()
-
-    @staticmethod
-    def downloader(args):
-        # Run external file
-        programs.downloader.app(args)
-
-    @staticmethod
-    def snake():
-        # Starts Snake Game
-        programs.snake.app()
-    
-    @staticmethod
-    def showallcolors():
-        # Starts Snake Game
-        programs.showallcolors.app()
 
 # Check if command is valid
 def isValid(command):
     args = command.split(" ")
-    if args[0] in [ x for x in dir(commands) if "_" not in x ]:
-        # print(extra.colors.OKBLUE + "Command is valid." + extra.colors.ENDC)
-
+    if args[0] in getValidCommands():
         # Run the command
-        try:
-            getattr(commands, args[0])(args)
-        except TypeError:
-            # The command does not support arguments
-            getattr(commands, args[0])()
+
+        # Check if the item is a basic command
+        if args[0] in getBasicCommands():
+            getattr(BasicCommands, args[0])()
+        else:
+            # Item is in it's own file.
+            try:
+                #getattr(commands, args[0])(args)
+                getattr(programs, args[0]).App(args)
+            except TypeError:
+             # The command does not support arguments
+                getattr(programs, args[0]).App()
 
     else:
         # Print an error
