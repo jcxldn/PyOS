@@ -18,7 +18,7 @@ class App(BaseApp):
 
     def go(self, args):
         
-        internal.runCommand.BasicCommands.clear()
+        self.clear()
         print internal.extra.colors.BOLD + "Downloader" + internal.extra.colors.ENDC
 
         # url = raw_input("Enter file url: ")

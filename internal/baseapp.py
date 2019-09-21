@@ -6,6 +6,11 @@ import internal.extra
 import internal.runCommand
 
 class BaseApp:
+    # Global variables
+    global_name = internal.extra.notes.name
+    global_ver = internal.extra.notes.ver
+
+    # Program Specific Variables
     usage_message = "Message not found."
     required_args = 0
 

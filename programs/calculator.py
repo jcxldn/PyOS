@@ -17,7 +17,7 @@ from internal.baseapp import BaseApp
 class App(BaseApp):
     def go(self):
         self.clear()
-        print(internal.extra.colors.BOLD + internal.extra.notes.name + " " + appName + internal.extra.colors.ENDC)
+        print(internal.extra.colors.BOLD + self.global_name + " " + appName + internal.extra.colors.ENDC)
         self.__modeselect()
 
     def __modeselect(self):
