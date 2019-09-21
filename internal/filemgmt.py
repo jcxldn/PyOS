@@ -14,3 +14,6 @@ class FileManagement:
 
     def getFullFilePath(self, filename):
         return os.path.relpath('.\\' + self.data_folder + "\\" + filename, os.getcwd())
+
+    def getFolderPath(self):
+        return os.path.relpath('.\\' + self.data_folder + "\\", os.getcwd())

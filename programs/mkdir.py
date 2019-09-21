@@ -1,15 +1,22 @@
-# PyOS
-# Made for Python 2.7
-# programs/mkdir.py
-
-# Import Libraries
-# PyOS Scripts
-import internal.extra
 import os
 
-def app():
-    """"""
-    print(internal.extra.colors.OKGREEN + "Creating directories: " + internal.extra.colors.ENDC)
-    dir_list = raw_input(internal.extra.colors.BOLD + "Enter list of directories, separated by commas: " + internal.extra.colors.ENDC)
-    dir_list = dir_list.split(',')
-    os.makedirs(os.path.join(os.getcwd(), *dir_list))
+from internal.baseapp import BaseApp
+
+class App(BaseApp):
+    usage_message = "mkdir [dir] ..."
+    required_args = 1
+
+    def go(self, args):
+
+        args.pop(0)
+
+        for i in range(len(args)):
+            path = os.path.join(self.FileMgmt.getFolderPath(), args[i])
+
+            # If the path is taken, warn the user and skip this directory
+            if os.path.exists(path):
+                print(self.Colors.Warning("Path '" + args[i] + "' already exists!"))
+                continue
+
+            # Path is free, make the folder
+            os.mkdir(os.path.join(self.FileMgmt.getFolderPath(), args[i]))

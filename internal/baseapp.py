@@ -30,10 +30,7 @@ class BaseApp:
             return
         
         # The check passed, run the program code.
-        try:
-            self.go(args)
-        except TypeError:
-            self.go()
+        self.go(args)
     
     def go(self):
         print("Hello, World!")
