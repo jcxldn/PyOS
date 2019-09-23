@@ -13,7 +13,9 @@ class FileManagement:
             os.makedirs(self.data_folder)
 
     def getFullFilePath(self, filename):
+        self.createIfNotPresent()
         return os.path.relpath('.\\' + self.data_folder + "\\" + filename, os.getcwd())
 
     def getFolderPath(self):
+        self.createIfNotPresent()
         return os.path.relpath('.\\' + self.data_folder + "\\", os.getcwd())
