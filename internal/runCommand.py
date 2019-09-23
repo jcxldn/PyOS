@@ -1,26 +1,10 @@
-# PyOS
-# Made for Python 2.7
-# internal/runCommand.py
-
-# Import Libraries
-
 import sys
-# PyOS Scripts
+
 import internal.extra
 import internal.update.runscript
-# External Programs
-import programs.calculator
-import programs.sysinfo
-import programs.example
-import programs.fizzbuzz
-import programs.ls
-import programs.pwd
-import programs.cp
-import programs.mv
-import programs.mkdir
-import programs.downloader
-import programs.snake
-import programs.showallcolors
+
+# Import programs (see programs/__init__.py)
+import programs
 
 # Setup colors
 import internal.colors

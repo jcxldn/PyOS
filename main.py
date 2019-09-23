@@ -45,6 +45,7 @@ internal.extra.cls()
 #print(internal.extra.colors.BOLD + internal.extra.notes.name + " " + internal.extra.notes.ver + " - " + internal.extra.colors.WARNING + "Made for Python 2.7" + internal.extra.colors.ENDC)
 print(Colors.Bold(internal.extra.notes.name + " " + internal.extra.notes.ver + " - ") + Colors.Warning("Made for Python 2.7"))
 # Print python version
-print ("Running on Python " + internal.extra.system.pyVer)
+print("Running on Python " + internal.extra.system.pyVer)
+print(str(len(internal.runCommand.getValidCommands())) + " programs detected.")
 print(internal.extra.notes.helpmsg)
 cmd_loop()
